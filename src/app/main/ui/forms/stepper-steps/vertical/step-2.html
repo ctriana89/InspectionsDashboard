@@ -1,10 +1,29 @@
 <div class="md-inline-form">
-    <p>Fill the <span class="text-bold">Birthplace</span> field to reveal another conditional step! Conditional step-ception!</p>
-
     <div layout="column" layout-gt-xs="row" flex>
         <md-input-container flex="100" flex-gt-xs="50">
-            <input type="text" name="birthplace" ng-model="vm.verticalStepper.step2.birthplace"
-                   placeholder="Birthplace">
+            <input type="text" name="birthplace" ng-model="vm.verticalStepper.step2.address"
+                   placeholder="Address">
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="50">
+          <div sgs-id="input-brand-logo"
+               ngf-drop=""
+               ngf-select=""
+               ng-model="vm.logo"
+               ngf-multiple="false"
+               ngf-change="uploadDocument($file)"
+               ng-model-rejected="rejFiles"
+               ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}"
+               class="upload-file"
+               ngf-allow-dir="true"
+               ngf-accept="'image/*'"
+               ngf-pattern="'image/*'"
+               ngf-max-size="10MB"
+               ngf-drop-available="dropAvailable">
+          <div class="file-upload-container">
+            <img ngf-thumbnail="vm.logo" class="thumb" height="100px">
+          </div>
+
+        </div>
         </md-input-container>
     </div>
 </div>

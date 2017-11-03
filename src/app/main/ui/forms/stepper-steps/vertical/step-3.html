@@ -1,8 +1,28 @@
 <div class="md-inline-form">
-    <div layout="column" layout-gt-xs="row" flex>
-        <md-input-container flex="100" flex-gt-xs="50">
-            <input type="text" name="ssn" ng-model="vm.verticalStepper.step3.ssn"
-                   placeholder="Social Security Number">
-        </md-input-container>
-    </div>
+  <div layout="column" layout-gt-xs="row" flex>
+    <md-input-container flex="100" flex-gt-xs="50">
+      <input type="text" name="firstname" ng-model="vm.verticalStepper.step3.firstname"
+             placeholder="Firstname"
+             required>
+      <div ng-messages="verticalStep3.firstname.$error"
+           ng-show="verticalStep3.firstname.$touched"
+           role="alert">
+        <div ng-message="required">
+          <span>Firstname field is required.</span>
+        </div>
+      </div>
+    </md-input-container>
+
+    <md-input-container flex="100" flex-gt-xs="50">
+      <input type="text" name="lastname" ng-model="vm.verticalStepper.step3.lastname"
+             placeholder="Lastname">
+      <div ng-messages="verticalStep3.lastname.$error"
+           ng-show="verticalStep3.lastname.$touched"
+           role="alert">
+        <div ng-message="required">
+          <span>Lastname field is required.</span>
+        </div>
+      </div>
+    </md-input-container>
+  </div>
 </div>
