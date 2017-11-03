@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/main/components/material-docs/demo/demo.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/main/components/material-docs/demo/</a> demo.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.78% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.14% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.78% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>8/45</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function ()
+{
+    'use strict';
+    angular
+        .module('app.components.material-docs')
+        .directive('docsDemo', docsDemo)
+        .directive('demoFile', demoFile)
+        .filter('toHtml', toHtml)
+        .directive('layoutAlign', <span class="fstat-no" title="function not covered" >function ()</span>
+        {
+<span class="cstat-no" title="statement not covered" >            return angular.noop;</span>
+        })
+        .directive('layout', <span class="fstat-no" title="function not covered" >function ()</span>
+        {
+<span class="cstat-no" title="statement not covered" >            return angular.noop;</span>
+        });
+&nbsp;
+    /** @ngInject */
+<span class="fstat-no" title="function not covered" >    function docsDemo($mdUtil)</span>
+    {
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            restrict        : 'E',
+            scope           : true,
+            templateUrl     : 'app/main/components/material-docs/demo/docs-demo.tmpl.html',
+            transclude      : true,
+            controller      :DocsDemoCtrl,
+            controllerAs    : 'demoCtrl',
+            bindToController: true
+        };
+&nbsp;
+<span class="fstat-no" title="function not covered" >        function DocsDemoCtrl($scope, $element, $attrs, $interpolate)</span>
+        {
+<span class="cstat-no" title="statement not covered" >            var self = this;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            self.interpolateCode = angular.isDefined($attrs.interpolateCode);</span>
+<span class="cstat-no" title="statement not covered" >            self.demoId = $interpolate($attrs.demoId || '')($scope.$parent);</span>
+<span class="cstat-no" title="statement not covered" >            self.demoTitle = $interpolate($attrs.demoTitle || '')($scope.$parent);</span>
+<span class="cstat-no" title="statement not covered" >            self.demoModule = $interpolate($attrs.demoModule || '')($scope.$parent);</span>
+<span class="cstat-no" title="statement not covered" >            self.files = {</span>
+                css : [],
+                js  : [],
+                html: []
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            self.addFile = <span class="fstat-no" title="function not covered" >function (name, contentsPromise)</span></span>
+            {
+<span class="cstat-no" title="statement not covered" >                var file = {</span>
+                    name           : convertName(name),
+                    contentsPromise: contentsPromise,
+                    fileType       : name.split('.').pop()
+                };
+<span class="cstat-no" title="statement not covered" >                contentsPromise.then(<span class="fstat-no" title="function not covered" >function (contents)</span></span>
+                {
+<span class="cstat-no" title="statement not covered" >                    file.contents = contents;</span>
+                });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if ( name === 'index.html' )</span>
+                {
+<span class="cstat-no" title="statement not covered" >                    self.files.index = file;</span>
+                }
+                else <span class="cstat-no" title="statement not covered" >if ( name === 'readme.html' )</span>
+                {
+<span class="cstat-no" title="statement not covered" >                    self.demoDescription = file;</span>
+                }
+                else
+                {
+<span class="cstat-no" title="statement not covered" >                    self.files[file.fileType] = self.files[file.fileType] || [];</span>
+<span class="cstat-no" title="statement not covered" >                    self.files[file.fileType].push(file);</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                self.orderedFiles = []</span>
+                    .concat(self.files.index || [])
+                    .concat(self.files.js || [])
+                    .concat(self.files.css || [])
+                    .concat(self.files.html || []);
+&nbsp;
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            self.editOnCodepen = <span class="fstat-no" title="function not covered" >function ()</span></span>
+            {
+<span class="cstat-no" title="statement not covered" >                codepen.editOnCodepen({</span>
+                    title : self.demoTitle,
+                    files : self.files,
+                    id    : self.demoId,
+                    module: self.demoModule
+                });
+            };
+&nbsp;
+<span class="fstat-no" title="function not covered" >            function convertName(name)</span>
+            {
+<span class="cstat-no" title="statement not covered" >                switch ( name )</span>
+                {
+                    case "index.html" :
+<span class="cstat-no" title="statement not covered" >                        return "HTML";</span>
+                    case "script.js" :
+<span class="cstat-no" title="statement not covered" >                        return "JS";</span>
+                    case "style.css" :
+<span class="cstat-no" title="statement not covered" >                        return "CSS";</span>
+                    default :
+<span class="cstat-no" title="statement not covered" >                        return name;</span>
+                }
+            }
+&nbsp;
+        }
+    }
+&nbsp;
+    /** @ngInject */
+<span class="fstat-no" title="function not covered" >    function demoFile($q, $interpolate)</span>
+    {
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            restrict: 'E',
+            require : '^docsDemo',
+            compile : compile
+        };
+&nbsp;
+<span class="fstat-no" title="function not covered" >        function compile(element, attr)</span>
+        {
+<span class="cstat-no" title="statement not covered" >            var contentsAttr = attr.contents;</span>
+<span class="cstat-no" title="statement not covered" >            var html = element.html();</span>
+<span class="cstat-no" title="statement not covered" >            var name = attr.name;</span>
+<span class="cstat-no" title="statement not covered" >            element.contents().remove();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return <span class="fstat-no" title="function not covered" >function postLink(scope, element, attr, docsDemoCtrl)</span></span>
+            {
+<span class="cstat-no" title="statement not covered" >                docsDemoCtrl.addFile(</span>
+                    $interpolate(name)(scope),
+                    $q.when(scope.$eval(contentsAttr) || html)
+                );
+<span class="cstat-no" title="statement not covered" >                element.remove();</span>
+            };
+        }
+    }
+&nbsp;
+    /** @ngInject */
+<span class="fstat-no" title="function not covered" >    function toHtml($sce)</span>
+    {
+<span class="cstat-no" title="statement not covered" >        return <span class="fstat-no" title="function not covered" >function (str)</span></span>
+        {
+<span class="cstat-no" title="statement not covered" >            return $sce.trustAsHtml(str);</span>
+        };
+    }
+})();</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Aug 30 2016 08:14:09 GMT+0300 (EEST)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

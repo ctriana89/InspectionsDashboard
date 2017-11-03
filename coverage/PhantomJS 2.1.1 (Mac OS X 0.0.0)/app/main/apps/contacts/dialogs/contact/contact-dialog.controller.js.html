@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/main/apps/contacts/dialogs/contact/contact-dialog.controller.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/main/apps/contacts/dialogs/contact/</a> contact-dialog.controller.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.44% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>7/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.29% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.44% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>7/36</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function ()
+{
+    'use strict';
+&nbsp;
+    angular
+        .module('app.contacts')
+        .controller('ContactDialogController', ContactDialogController);
+&nbsp;
+    /** @ngInject */
+<span class="fstat-no" title="function not covered" >    function ContactDialogController($mdDialog, Contact, Contacts, User, msUtils)</span>
+    {
+<span class="cstat-no" title="statement not covered" >        var vm = this;</span>
+&nbsp;
+        // Data
+<span class="cstat-no" title="statement not covered" >        vm.title = 'Edit Contact';</span>
+<span class="cstat-no" title="statement not covered" >        vm.contact = angular.copy(Contact);</span>
+<span class="cstat-no" title="statement not covered" >        vm.contacts = Contacts;</span>
+<span class="cstat-no" title="statement not covered" >        vm.user = User;</span>
+<span class="cstat-no" title="statement not covered" >        vm.newContact = false;</span>
+<span class="cstat-no" title="statement not covered" >        vm.allFields = false;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if ( !vm.contact )</span>
+        {
+<span class="cstat-no" title="statement not covered" >            vm.contact = {</span>
+                'id'      : msUtils.guidGenerator(),
+                'name'    : '',
+                'lastName': '',
+                'avatar'  : 'assets/images/avatars/profile.jpg',
+                'nickname': '',
+                'company' : '',
+                'jobTitle': '',
+                'email'   : '',
+                'phone'   : '',
+                'address' : '',
+                'birthday': null,
+                'notes'   : ''
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            vm.title = 'New Contact';</span>
+<span class="cstat-no" title="statement not covered" >            vm.newContact = true;</span>
+<span class="cstat-no" title="statement not covered" >            vm.contact.tags = [];</span>
+        }
+&nbsp;
+        // Methods
+<span class="cstat-no" title="statement not covered" >        vm.addNewContact = addNewContact;</span>
+<span class="cstat-no" title="statement not covered" >        vm.saveContact = saveContact;</span>
+<span class="cstat-no" title="statement not covered" >        vm.deleteContactConfirm = deleteContactConfirm;</span>
+<span class="cstat-no" title="statement not covered" >        vm.closeDialog = closeDialog;</span>
+<span class="cstat-no" title="statement not covered" >        vm.toggleInArray = msUtils.toggleInArray;</span>
+<span class="cstat-no" title="statement not covered" >        vm.exists = msUtils.exists;</span>
+&nbsp;
+        //////////
+&nbsp;
+        /**
+         * Add new contact
+         */
+<span class="fstat-no" title="function not covered" >        function addNewContact()</span>
+        {
+<span class="cstat-no" title="statement not covered" >            vm.contacts.unshift(vm.contact);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            closeDialog();</span>
+        }
+&nbsp;
+        /**
+         * Save contact
+         */
+<span class="fstat-no" title="function not covered" >        function saveContact()</span>
+        {
+            // Dummy save action
+<span class="cstat-no" title="statement not covered" >            for ( var i = 0; i &lt; vm.contacts.length; i++ )</span>
+            {
+<span class="cstat-no" title="statement not covered" >                if ( vm.contacts[i].id === vm.contact.id )</span>
+                {
+<span class="cstat-no" title="statement not covered" >                    vm.contacts[i] = angular.copy(vm.contact);</span>
+<span class="cstat-no" title="statement not covered" >                    break;</span>
+                }
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            closeDialog();</span>
+        }
+&nbsp;
+        /**
+         * Delete Contact Confirm Dialog
+         */
+<span class="fstat-no" title="function not covered" >        function deleteContactConfirm(ev)</span>
+        {
+<span class="cstat-no" title="statement not covered" >            var confirm = $mdDialog.confirm()</span>
+                .title('Are you sure want to delete the contact?')
+                .htmlContent('&lt;b&gt;' + vm.contact.name + ' ' + vm.contact.lastName + '&lt;/b&gt;' + ' will be deleted.')
+                .ariaLabel('delete contact')
+                .targetEvent(ev)
+                .ok('OK')
+                .cancel('CANCEL');
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $mdDialog.show(confirm).then(<span class="fstat-no" title="function not covered" >function ()</span></span>
+            {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                vm.contacts.splice(vm.contacts.indexOf(Contact), 1);</span>
+&nbsp;
+            });
+        }
+&nbsp;
+        /**
+         * Close dialog
+         */
+<span class="fstat-no" title="function not covered" >        function closeDialog()</span>
+        {
+<span class="cstat-no" title="statement not covered" >            $mdDialog.hide();</span>
+        }
+&nbsp;
+    }
+})();</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Aug 30 2016 08:14:09 GMT+0300 (EEST)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>
