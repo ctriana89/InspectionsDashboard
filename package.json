@@ -3,6 +3,7 @@
   "version": "1.4.9",
   "dependencies": {},
   "scripts": {
+    "postinstall": "bower install",
     "test": "gulp test"
   },
   "devDependencies": {

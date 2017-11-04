@@ -1,24 +1,33 @@
 <div class="md-inline-form">
     <div layout="column" layout-gt-xs="row" flex>
         <md-input-container flex="100" flex-gt-xs="50">
-            <input type="text" name="birthplace" ng-model="vm.verticalStepper.step2.address"
-                   placeholder="Address">
+            <input type="text" name="ownerName" ng-model="vm.verticalStepper.step1.ownerName"
+                   placeholder="Owner Name">
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="50">
+            <input type="text" name="ownerAddress" ng-model="vm.verticalStepper.step1.ownerAddress"
+                   placeholder="Address"
+                   required>
+            <div ng-messages="step1.ownerAddress.$error"
+                 ng-show="step1.ownerAddress.$touched"
+                 role="alert">
+                <div ng-message="required">
+                    <span>Firstname field is required.</span>
+                </div>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="100">
           <div sgs-id="input-brand-logo"
                ngf-drop=""
                ngf-select=""
                ng-model="vm.logo"
                ngf-multiple="false"
-               ngf-change="uploadDocument($file)"
-               ng-model-rejected="rejFiles"
-               ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}"
                class="upload-file"
                ngf-allow-dir="true"
                ngf-accept="'image/*'"
                ngf-pattern="'image/*'"
                ngf-max-size="10MB"
-               ngf-drop-available="dropAvailable">
+               ngf-drop-available="dropAvailable" >
           <div class="file-upload-container">
             <img ngf-thumbnail="vm.logo" class="thumb" height="100px">
           </div>
