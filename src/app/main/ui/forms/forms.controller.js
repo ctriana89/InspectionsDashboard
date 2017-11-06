@@ -6,7 +6,8 @@
         .controller('FormsController', FormsController);
 
     /** @ngInject */
-    function FormsController($mdDialog) {
+    FormsController.$inject=['Upload'];
+    function FormsController(Upload) {
         var vm = this;
 
         // Data
@@ -39,7 +40,7 @@
         vm.showDataDialog = showDataDialog;
         vm.submitHorizontalStepper = submitHorizontalStepper;
         vm.submitVerticalStepper = submitVerticalStepper;
-
+       vm.uploadDocument=uploadDocument;
         //////////
 
         /**
@@ -78,7 +79,13 @@
                 step5: {}
             };
         }
-
+        function uploadDocument(file) {
+            Upload.base64DataUrl(file).then(
+                function (url) {
+                    vm.verticalStepper.step1.frontSideHouse1 = url;
+                    console.log(url);
+                });
+        }
         /**
          * Submit stepper form
          *
@@ -94,6 +101,11 @@
                     {
                         text: 'Property Owner: ' + vm.verticalStepper.step1.firstname + ' ' + vm.verticalStepper.step1.lastname,
                         style: 'anotherStyle'
+                    },
+                    {
+                        image: vm.verticalStepper.step1.frontSideHouse1,
+                        width: 150,
+                        height: 150,
                     },
                     {text: 'Address: ' + vm.verticalStepper.step2.address, style: ['header', 'anotherStyle']},
                     {

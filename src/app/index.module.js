@@ -12,6 +12,7 @@
             'uiGmapgoogle-maps',
             'textAngular',
             'xeditable',
+            'ngFileUpload',
 
             // Core
             'app.core',
