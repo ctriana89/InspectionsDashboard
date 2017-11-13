@@ -2,7 +2,7 @@
     <div layout="column" layout-gt-xs="row" flex>
         <md-input-container flex="100" flex-gt-xs="50">
             <input type="text" name="ownerName" ng-model="vm.verticalStepper.step1.ownerName"
-                   placeholder="Owner Name">
+                   placeholder="Owner Name" required>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="50">
             <input type="text" name="ownerAddress" ng-model="vm.verticalStepper.step1.ownerAddress"
@@ -16,7 +16,9 @@
                 </div>
             </div>
         </md-input-container>
-        <md-input-container flex="100" flex-gt-xs="50">
+    </div>
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100" flex-gt-xs="100">
           <div name="frontSideHouse"
                ngf-drop=""
                ngf-select=""
@@ -30,13 +32,13 @@
                ngf-accept="'image/*'"
                ngf-pattern="'image/*'"
                ngf-max-size="10MB"
+               required
                ngf-drop-available="dropAvailable">
-              Upload front side home picture
-
-          <div class="file-upload-container">
-            <img ngf-thumbnail="vm.verticalStepper.step1.frontSideHouse" class="thumb" height="100px">
+              <span ng-if="vm.verticalStepper.step1.frontSideHouse==undefined">Upload front side home picture</span>
+              <div class="file-upload-container">
+                <img ngf-thumbnail="vm.verticalStepper.step1.frontSideHouse" class="thumb" height="100px">
+              </div>
           </div>
-        <!--</div>-->
         </md-input-container>
     </div>
 </div>

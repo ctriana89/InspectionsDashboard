@@ -1,26 +1,175 @@
 <div class="md-inline-form">
   <div layout="column" layout-gt-xs="row" flex>
-    <md-input-container flex="100" flex-gt-xs="50">
-      <input type="text" name="firstname" ng-model="vm.verticalStepper.step3.firstname"
-             placeholder="Firstname"
+    <md-input-container flex="100" flex-gt-xs="20">
+      <input type="text" name="dwelling" ng-model="vm.verticalStepper.step3.dwelling"
+             placeholder="Dwelling"
              required>
-      <div ng-messages="verticalStep3.firstname.$error"
-           ng-show="verticalStep3.firstname.$touched"
+      <div ng-messages="verticalStep3.dwelling.$error"
+           ng-show="verticalStep3.dwelling.$touched"
            role="alert">
         <div ng-message="required">
-          <span>Firstname field is required.</span>
+          <span>Dwelling field is required.</span>
         </div>
       </div>
     </md-input-container>
-
-    <md-input-container flex="100" flex-gt-xs="50">
-      <input type="text" name="lastname" ng-model="vm.verticalStepper.step3.lastname"
-             placeholder="Lastname">
-      <div ng-messages="verticalStep3.lastname.$error"
-           ng-show="verticalStep3.lastname.$touched"
+    <md-input-container flex="100" flex-gt-xs="20">
+      <input type="text" name="foundations" ng-model="vm.verticalStepper.step3.foundations"
+             placeholder="Foundation"
+        required>
+      <div ng-messages="verticalStep3.foundation.$error"
+           ng-show="verticalStep3.foundation.$touched"
            role="alert">
         <div ng-message="required">
-          <span>Lastname field is required.</span>
+          <span>Foundation field is required.</span>
+        </div>
+      </div>
+    </md-input-container>
+    <md-input-container flex="100" flex-gt-xs="20">
+      <input type="text" name="construction" ng-model="vm.verticalStepper.step3.construction"
+             placeholder="Construction"
+             required>
+      <div ng-messages="verticalStep3.construction.$error"
+           ng-show="verticalStep3.construction.$touched"
+           role="alert">
+        <div ng-message="required">
+          <span>Construction field is required.</span>
+        </div>
+      </div>
+    </md-input-container>
+    <md-input-container flex="100" flex-gt-xs="20">
+      <input type="text" name="siding" ng-model="vm.verticalStepper.step3.siding"
+             placeholder="Siding"
+             required>
+      <div ng-messages="verticalStep3.siding.$error"
+           ng-show="verticalStep3.siding.$touched"
+           role="alert">
+        <div ng-message="required">
+          <span>Siding field is required.</span>
+        </div>
+      </div>
+    </md-input-container>
+    <md-input-container flex="100" flex-gt-xs="20">
+      <label>Doors (Interior & Exterior)</label>
+      <md-select ng-model="vm.verticalStepper.step3.doors" class="md-no-underline" required md-no-asterisk="false">
+        <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
+          {{state.abbrev}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+  <div layout="column" layout-gt-xs="row">
+    <md-input-container flex="100" flex-gt-xs="20">
+      <label>Sliding doors</label>
+      <md-select ng-model="vm.verticalStepper.step3.slidingDoors" class="md-no-underline" required md-no-asterisk="false">
+        <md-option ng-repeat="state in vm.selectOptions" ng-value="state.abbrev">
+          {{state.abbrev}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container flex="100" flex-gt-xs="20">
+      <label>Windows</label>
+      <md-select ng-model="vm.verticalStepper.step3.windows" class="md-no-underline" required md-no-asterisk="false">
+        <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+          {{state.abbrev}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container flex="100" flex-gt-xs="20">
+      <label>Walls</label>
+      <md-select ng-model="vm.verticalStepper.step3.walls" class="md-no-underline" required md-no-asterisk="false">
+        <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev"  >
+          {{state.abbrev}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container flex="100" flex-gt-xs="20">
+      <label>Floors</label>
+      <md-select ng-model="vm.verticalStepper.step3.floors" class="md-no-underline" required md-no-asterisk="false">
+        <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+          {{state.abbrev}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container flex="100" flex-gt-xs="20">
+      <label>Stairways</label>
+      <md-select ng-model="vm.verticalStepper.step3.stairways" class="md-no-underline" required md-no-asterisk="false">
+        <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+          {{state.abbrev}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+  <div layout="column" layout-gt-xs="row">
+    <md-input-container flex="100" flex-gt-xs="20">
+      <label>Porches, balconies, Patio</label>
+      <md-select ng-model="vm.verticalStepper.step3.porchesBalconiesPatio" class="md-no-underline" required md-no-asterisk="false">
+        <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
+          {{state.abbrev}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container flex="100" flex-gt-xs="20">
+      <label>Decks, and carports</label>
+      <md-select ng-model="vm.verticalStepper.step3.decksCarports" class="md-no-underline" required md-no-asterisk="false">
+        <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
+          {{state.abbrev}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container flex="100" flex-gt-xs="20">
+      <label>Garage door operator(s)</label>
+      <md-select ng-model="vm.verticalStepper.step3.garageDoorOperator" class="md-no-underline" required md-no-asterisk="false">
+        <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+          {{state.abbrev}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container flex="100" flex-gt-xs="20">
+      <p>Model: </p>
+      <md-radio-group ng-model="vm.verticalStepper.step3.garageDoorOperatorModel">
+        <md-radio-button value="Electric" class="md-primary" >Electric</md-radio-button>
+        <md-radio-button value="Manual"> Manual </md-radio-button>
+      </md-radio-group>
+    </md-input-container>
+
+    <md-input-container flex="100" flex-gt-xs="20">
+      <label>Fireplace/chimney</label>
+      <md-select ng-model="vm.verticalStepper.step3.fireplaceChimney"  class="md-no-underline" required md-no-asterisk="false">
+        <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
+          {{state.abbrev}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+  <div layout="column" layout-gt-xs="row">
+    <md-input-container flex="100" flex-gt-xs="100">
+      <textarea  name="comments" ng-model="vm.verticalStepper.step3.comments"
+             placeholder="Comments"
+                 required></textarea>
+    </md-input-container>
+  </div>
+  <div layout="column" layout-gt-xs="row" flex>
+    <md-input-container flex="100" flex-gt-xs="100">
+      <!--<div class="upload-file" -->
+           <!--ngf-select -->
+           <!--ng-model="vm.verticalStepper.step3.pictures" -->
+           <!--ngf-multiple="true" -->
+           <!--ngf-change="vm.uploadDocuments($files)" -->
+           <!--accept="image/*">select</div>-->
+
+
+      <div name="structuralSystems"
+           ngf-select
+           ngf-change="vm.uploadDocuments($files)"
+           ng-model="vm.verticalStepper.step3.pictures"
+           ngf-multiple="true"
+           class="upload-file"
+           ngf-accept="'image/*'"
+           ngf-pattern="'image/*'"
+           required>
+        <span ng-if="vm.verticalStepper.step3.pictures==undefined">Please take some pictures and then click here to upload</span>
+        <div class="file-upload-container" ng-repeat="pic in vm.verticalStepper.step3.pictures">
+          <img ngf-thumbnail="pic" class="thumb" height="100px">
         </div>
       </div>
     </md-input-container>
