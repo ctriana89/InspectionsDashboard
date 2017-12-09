@@ -1,0 +1,25 @@
+<md-input-container flex="100" flex-gt-xs="40">
+        <input name="minRange" ng-model="vm.step.minRange"
+               placeholder="Minimun $ amount" type="number"
+               required  step="0.01">
+        <!--<div ng-messages="verticalStep3.dwelling.$error"-->
+             <!--ng-show="verticalStep3.dwelling.$touched"-->
+             <!--role="alert">-->
+            <!--<div ng-message="required">-->
+                <!--<span>Minimun amount is required.</span>-->
+            <!--</div>-->
+        <!--</div>-->
+    </md-input-container>
+    <span>--</span>
+    <md-input-container flex="100" flex-gt-xs="40">
+        <input name="maxRange" ng-model="vm.step.maxRange"
+               placeholder="Maximun $ amount" type="number"
+               required  step="0.01">
+        <!--<div ng-messages="verticalStep3.dwelling.$error"-->
+             <!--ng-show="verticalStep3.dwelling.$touched"-->
+             <!--role="alert">-->
+            <!--<div ng-message="required">-->
+                <!--<span>Minimun amount is required.</span>-->
+            <!--</div>-->
+        <!--</div>-->
+    </md-input-container>

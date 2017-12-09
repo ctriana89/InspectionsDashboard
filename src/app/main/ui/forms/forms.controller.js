@@ -6,10 +6,10 @@
         .controller('FormsController', FormsController);
 
     /** @ngInject */
-    FormsController.$inject=['Upload','$timeout'];
-    function FormsController(Upload,$timeout) {
+    FormsController.$inject=['Upload','$timeout','deviceDetector'];
+    function FormsController(Upload,$timeout,deviceDetector) {
         var vm = this;
-
+        vm.deviceDetector = deviceDetector;
         // Data
         vm.horizontalStepper = {
             step1: {},
@@ -37,12 +37,12 @@
                 ]
             },
             step3: {
-                garageDoorOperatorModel:"Electric"
+                garageDoorOperatorModel:"Electric",
+                picturesAndroid:[]
             },
-            step4: {},
-            step5: {}
+            step4: {}
         };
-    vm.selectOptions=('Satisfactory, Not Applicable, None, See below')
+    vm.selectOptions=('Satisfactory,Not Applicable,None,See below')
         .split(',').map(function (state) {
             return { abbrev: state };
         });
@@ -62,6 +62,8 @@
         vm.uploadDocument=uploadDocument;
         vm.uploadDocuments=uploadDocuments;
         vm.convertBase64=convertBase64;
+        vm.uploadDocumentOneByOne=uploadDocumentOneByOne;
+        vm.removeElementInArray=removeElementInArray;
         vm.multiplesFiles=[];
         //////////
 
@@ -96,34 +98,46 @@
             vm.verticalStepper = {
                 step1: {},
                 step2: {},
-                step3: {}
+                step3: {},
+                step4: {}
             };
         }
         function uploadDocument(file) {
             Upload.base64DataUrl(file).then(
                 function (url) {
                     vm.verticalStepper.step1.frontSideHouse1 = url;
-                    console.log(url);
                 });
+        }
+        function uploadDocumentOneByOne(file, step) {
+            Upload.base64DataUrl(file).then(
+                function (url) {
+                    if (url !== null) {
+                        vm.multiplesFiles[step]=[];
+                        vm.multiplesFiles[step].push(url);///
+                    }
+                });
+        }
+        function removeElementInArray(array, element) {
+            const index = array.indexOf(element);
+
+            if (index !== -1) {
+                array.splice(index, 1);
+            }
         }
         function convertBase64(file) {
             return Upload.base64DataUrl(file).then(
                 function (url) {
-                    console.log(url);
                     return url;
                 });
         }
-        function uploadDocuments(files) {
-            console.log('Files' + files);
+        function uploadDocuments(files, step) {
             if (files && files.length) {
                 for (var i = 0; i < files.length; i++) {
                     Upload.base64DataUrl(files[i]).then(
                         function (url) {
-                            console.log(url);
-                            vm.multiplesFiles.push(url);
-                            console.log('Each one i' + url);
+                            vm.multiplesFiles[step]=[];
+                            vm.multiplesFiles[step].push(url);
                         });
-                    console.log('Each one' + files[i]);
                 }
             }
         }
@@ -132,7 +146,6 @@
 
             Upload.base64DataUrl(files).then(function(urls){
                 vm.multiplesFiles=urls;
-                console.log(urls);
             });
             angular.forEach(files, function (file) {
                 if (file && !file.$error) {
@@ -147,10 +160,8 @@
                         });
                         file.upload.base64DataUrl(files[i]).then(
                             function (url) {
-                                console.log(url);
                                 //vm.multiplesFiles.push(url);
                             });
-                        console.log('Each one'+files[i]);
                     }, function (response) {
                         if (response.status > 0)
                             vm.errorMsg = response.status + ': ' + response.data;
@@ -181,7 +192,7 @@
                     {text: 'Requested by: ' + vm.verticalStepper.step1.ownerName, style: 'header'},
                     {
                         image: vm.verticalStepper.step1.frontSideHouse1,
-                        fit: [600, 600]
+                        fit: [550, 550]
                     },
                     {text: vm.verticalStepper.step1.ownerAddress, style: 'anotherStyle'},
                     {
@@ -203,7 +214,11 @@
                     GeneralNotesAndLiability(),
                     CostEstimates(),
                     structuralSystems(),
-                    addPicturesToTheDocument(vm.multiplesFiles)
+                    estimatedCost(vm.verticalStepper.step3),
+                    addPicturesToTheDocument(vm.multiplesFiles['3']),
+                    appliances(),
+                    estimatedCost(vm.verticalStepper.step4),
+                    addPicturesToTheDocument(vm.multiplesFiles['4'])
                 ],
                 styles: {
                     header: {
@@ -228,8 +243,13 @@
                     }
                 }
             };
-            console.log(docDefinition);
-            pdfMake.createPdf(docDefinition).open();
+            // console.log(docDefinition);
+            // if(vm.deviceDetector.os.android){
+            //     pdfMake.createPdf(docDefinition).download();
+            // }
+            // else {
+                pdfMake.createPdf(docDefinition).open();
+            //}
 
             // // Show the sent data.. you can delete this safely.
             // $mdDialog.show({
@@ -490,9 +510,89 @@
                         {text: 'Fireplace/chimney'},
                         {text: vm.verticalStepper.step3.fireplaceChimney}
                     ]
-                }, {text: vm.verticalStepper.step3.comments, pageBreak: 'after'}
+                }, {text: vm.verticalStepper.step3.deficiencies }
             ]
         }
+
+        /**
+         * Return page "Appliances"
+         */
+        function appliances() {
+            return [
+                {text: "APPLIANCES", style: "h6_header", pageBreak: 'before', tocItem: true},
+                {
+                    text: "Our inspection of major appliances in the kitchen is a combined visual and functional inspection. Power must be supplied to operate appliances. Calibrations to cooking equipment are not evaluated. Please take note that dishwashers can fail at any time due to their complexity. Our purpose is to determine if the system is free of leaks and/or excessive corrosion. Please note that this is beyond the scope of this inspection to operate valves or disconnect supply hoses to these     appliances as they can leak at any time and should be considered a part of normal maintenance."
+
+                },
+                {text: "Observed Deficiencies and Notes:", style: "h6_header"},
+                {
+                    columns: [
+                        {text: 'Range/cooktop/ovens'},
+                        {text: vm.verticalStepper.step4.rangeCooktopOvens}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Range Exhaust Vent'},
+                        {text: vm.verticalStepper.step4.rangeExhaustVent}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Refrigerator'},
+                        {text: vm.verticalStepper.step4.refrigerator}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Freezer'},
+                        {text: vm.verticalStepper.step4.freezer}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Icemaker'},
+                        {text: vm.verticalStepper.step4.icemaker}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Ice dispenser'},
+                        {text: vm.verticalStepper.step4.iceDispenser}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Chilled water'},
+                        {text: vm.verticalStepper.step4.chilledWater}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Dishwasher'},
+                        {text: vm.verticalStepper.step4.dishwasher}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Microwave Oven'},
+                        {text: vm.verticalStepper.step4.microwaveOven}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Trash Compactor'},
+                        {text: vm.verticalStepper.step4.trashCompactor}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Mechanical Exhaust Vents and Heaters'},
+                        {text: vm.verticalStepper.step4.mechanicalExhaustVents}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Washer'},
+                        {text: vm.verticalStepper.step4.washer}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Dryer'},
+                        {text: vm.verticalStepper.step4.dryer}
+                    ]
+                },{text: vm.verticalStepper.step4.deficiencies }
+                ]
+        };
 
         function addPicturesToTheDocument(pictures) {
             var temp = [];
@@ -501,11 +601,11 @@
                 temp.push({
                     columns: [{
                         image: pictures[i],
-                        fit: [100, 100]
+                        fit: [250, 250]
                     },
                         (pictures[second] !== undefined) ? {
                                 image: pictures[second],
-                                fit: [100, 100]
+                                fit: [250, 250]
                             } : {}
                     ]
                 });
@@ -515,12 +615,19 @@
             // };
             return temp;
         }
+        function  estimatedCost(step) {
+            return {
+                columns: [
+                    {text: ''},
+                    {text: "Estimated cost of repairs: " + step.minRange+" - "+step.maxRange ,pageBreak: 'after'}
+                ]
+            };
+        }
         /**
          * Send form
          */
         function sendForm(ev) {
             // You can do an API call here to send the form to your server
-
             // Show the sent data.. you can delete this safely.
             $mdDialog.show({
                 controller: function ($scope, $mdDialog, formWizardData) {

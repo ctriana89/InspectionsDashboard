@@ -13,6 +13,8 @@
             'textAngular',
             'xeditable',
             'ngFileUpload',
+            'ng.deviceDetector',
+
 
             // Core
             'app.core',
@@ -47,5 +49,6 @@
 
             // Components
             'app.components'
+
         ]);
 })();

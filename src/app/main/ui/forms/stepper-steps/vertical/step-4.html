@@ -1,11 +1,172 @@
 <div class="md-inline-form">
     <div layout="column" layout-gt-xs="row" flex>
-        <md-input-container flex="100">
-            <label>Address</label>
-            <textarea ng-model="vm.verticalStepper.step4.date" md-maxlength="150" max-rows="5"></textarea>
-            <div ng-messages="verticalStep4.date.$error"
-                 ng-show="verticalStep4.date.$touched"
-                 role="alert">
+        <md-input-container flex="100" flex-gt-xs="20">
+            <label>Range/cooktop/ovens</label>
+            <md-select ng-model="vm.verticalStepper.step4.rangeCooktopOvens" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions" ng-value="state.abbrev">
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20">
+            <label>Range Exhaust Vent</label>
+            <md-select ng-model="vm.verticalStepper.step4.rangeExhaustVent" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions" ng-value="state.abbrev">
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20">
+            <label>Refrigerator</label>
+            <md-select ng-model="vm.verticalStepper.step4.refrigerator" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev"  >
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20">
+            <label>Freezer</label>
+            <md-select ng-model="vm.verticalStepper.step4.freezer" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20">
+            <label>Icemaker</label>
+            <md-select ng-model="vm.verticalStepper.step4.icemaker" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100" flex-gt-xs="20">
+            <label>Ice dispenser</label>
+            <md-select ng-model="vm.verticalStepper.step4.iceDispenser" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20">
+            <label>Chilled water</label>
+            <md-select ng-model="vm.verticalStepper.step4.chilledWater" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20">
+            <label>Dishwasher</label>
+            <md-select ng-model="vm.verticalStepper.step4.dishwasher" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20">
+            <label>Microwave Oven</label>
+            <md-select ng-model="vm.verticalStepper.step4.microwaveOven" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20">
+            <label>Garbage disposal</label>
+            <md-select ng-model="vm.verticalStepper.step4.garbageDisposal" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100" flex-gt-xs="20">
+            <label>Trash Compactor</label>
+            <md-select ng-model="vm.verticalStepper.step4.trashCompactor" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20">
+            <label>Mechanical Exhaust Vents and Heaters</label>
+            <md-select ng-model="vm.verticalStepper.step4.mechanicalExhaustVents" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20">
+            <label>Washer</label>
+            <md-select ng-model="vm.verticalStepper.step4.washer" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20">
+            <label>Dryer</label>
+            <md-select ng-model="vm.verticalStepper.step4.dryer" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+    <div layout="column" layout-gt-xs="row">
+        <md-input-container flex="100" flex-gt-xs="100">
+      <textarea  name="comments" ng-model="vm.verticalStepper.step4.deficiencies"
+                 placeholder="Deficiencies">
+      </textarea>
+        </md-input-container>
+    </div>
+    <div layout="column" layout-gt-xs="row" ng-show="vm.verticalStepper.step4.deficiencies!==undefined">
+        <price-range step="vm.verticalStepper.step4"></price-range>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex ng-show="vm.verticalStepper.step4.deficiencies!==undefined">
+        <md-input-container flex="100" flex-gt-xs="100">
+            <!--<div class="upload-file" -->
+            <!--ngf-select -->
+            <!--ng-model="vm.verticalStepper.step4.pictures" -->
+            <!--ngf-multiple="true" -->
+            <!--ngf-change="vm.uploadDocuments($files)" -->
+            <!--accept="image/*">select</div>-->
+
+
+            <div ng-if="!vm.deviceDetector.os.android"
+                 name="structuralSystems"
+                 ngf-select
+                 ngf-change="vm.uploadDocuments($files, '4')"
+                 ng-model="vm.verticalStepper.step4.pictures"
+                 ngf-multiple="true"
+                 class="upload-file"
+                 ngf-accept="'image/*'"
+                 ngf-pattern="'image/*'"
+                 ng-required="vm.verticalStepper.step4.deficiencies!==undefined">
+                <span ng-if="vm.multiplesFiles['4']==undefined">Please take some pictures and then click here to upload*</span>
+                <div class="file-upload-container" ng-repeat="pic in vm.multiplesFiles['4']">
+                    <img ngf-thumbnail="pic" class="thumb" height="100px">
+                </div>
+            </div>
+            <div ng-if="vm.deviceDetector.os.android" name="structuralSystems"
+                 ngf-select
+                 ngf-change="vm.uploadDocumentOneByOne($file, '4')"
+                 ng-model="vm.verticalStepper.step4.picture"
+                 class="upload-file"
+                 ngf-accept="'image/*'"
+                 ngf-pattern="'image/*'"
+                 ng-required="vm.verticalStepper.step4.deficiencies!==undefined">
+                <span ng-if="vm.multiplesFiles['4']==undefined">Select the pictures*</span>
+                <div class="file-upload-container" ng-repeat="pic in vm.multiplesFiles['4']">
+                    <div>
+                        <img ngf-thumbnail="pic" class="thumb">
+                        <a class="close-link" ng-click="vm.removeElementInArray(vm.multiplesFiles['4'],pic)"></a>
+                    </div>
+                </div>
             </div>
         </md-input-container>
     </div>

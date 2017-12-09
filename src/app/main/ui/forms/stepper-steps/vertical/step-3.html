@@ -123,10 +123,9 @@
           {{state.abbrev}}
         </md-option>
       </md-select>
-    </md-input-container>
-    <md-input-container flex="100" flex-gt-xs="20">
-      <p>Model: </p>
-      <md-radio-group ng-model="vm.verticalStepper.step3.garageDoorOperatorModel">
+    <!--</md-input-container>-->
+    <!--<md-input-container flex="100" flex-gt-xs="20" >-->
+      <md-radio-group ng-model="vm.verticalStepper.step3.garageDoorOperatorModel" ng-show="vm.verticalStepper.step3.garageDoorOperator!=='None' && vm.verticalStepper.step3.garageDoorOperator!==undefined">
         <md-radio-button value="Electric" class="md-primary" >Electric</md-radio-button>
         <md-radio-button value="Manual"> Manual </md-radio-button>
       </md-radio-group>
@@ -143,12 +142,15 @@
   </div>
   <div layout="column" layout-gt-xs="row">
     <md-input-container flex="100" flex-gt-xs="100">
-      <textarea  name="comments" ng-model="vm.verticalStepper.step3.comments"
-             placeholder="Comments"
-                 required></textarea>
+      <textarea  name="comments" ng-model="vm.verticalStepper.step3.deficiencies"
+             placeholder="Deficiencies" ></textarea>
     </md-input-container>
   </div>
-  <div layout="column" layout-gt-xs="row" flex>
+
+  <div layout="column" layout-gt-xs="row" ng-show="vm.verticalStepper.step3.deficiencies!==undefined">
+        <price-range step="vm.verticalStepper.step3"></price-range>
+  </div>
+  <div layout="column" layout-gt-xs="row" flex ng-show="vm.verticalStepper.step3.deficiencies!==undefined">
     <md-input-container flex="100" flex-gt-xs="100">
       <!--<div class="upload-file" -->
            <!--ngf-select -->
@@ -158,18 +160,34 @@
            <!--accept="image/*">select</div>-->
 
 
-      <div name="structuralSystems"
+      <div ng-if="!vm.deviceDetector.os.android" name="structuralSystems"
            ngf-select
-           ngf-change="vm.uploadDocuments($files)"
+           ngf-change="vm.uploadDocuments($files, '3')"
            ng-model="vm.verticalStepper.step3.pictures"
            ngf-multiple="true"
            class="upload-file"
            ngf-accept="'image/*'"
            ngf-pattern="'image/*'"
-           required>
-        <span ng-if="vm.verticalStepper.step3.pictures==undefined">Please take some pictures and then click here to upload</span>
-        <div class="file-upload-container" ng-repeat="pic in vm.verticalStepper.step3.pictures">
+           ng-required="vm.verticalStepper.step3.deficiencies!==undefined">
+        <span ng-if="vm.multiplesFiles['3']==undefined">Please take some pictures and then click here to upload</span>
+        <div class="file-upload-container" ng-repeat="pic in vm.multiplesFiles['3']">
           <img ngf-thumbnail="pic" class="thumb" height="100px">
+        </div>
+      </div>
+      <div ng-if="vm.deviceDetector.os.android" name="structuralSystems"
+            ngf-select
+            ngf-change="vm.uploadDocumentOneByOne($file, '3')"
+            ng-model="vm.verticalStepper.step3.picture"
+            class="upload-file"
+            ngf-accept="'image/*'"
+            ngf-pattern="'image/*'"
+            ng-required="vm.verticalStepper.step4.deficiencies!==undefined">
+        <span ng-if="vm.multiplesFiles['3']==undefined">Select the pictures</span>
+        <div class="file-upload-container" ng-repeat="pic in vm.multiplesFiles['3']">
+          <div>
+            <img ngf-thumbnail="pic" class="thumb">
+            <a class="close-link" ng-click="vm.removeElementInArray(vm.multiplesFilesAndriod['3'], pic)"></a>
+            multiplesFiles
         </div>
       </div>
     </md-input-container>
