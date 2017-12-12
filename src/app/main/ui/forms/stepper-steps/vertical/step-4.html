@@ -124,7 +124,7 @@
       </textarea>
         </md-input-container>
     </div>
-    <div layout="column" layout-gt-xs="row" ng-show="vm.verticalStepper.step4.deficiencies!==undefined">
+    <div layout="column" layout-gt-xs="row" ng-if="vm.verticalStepper.step4.deficiencies!==undefined">
         <price-range step="vm.verticalStepper.step4"></price-range>
     </div>
     <div layout="column" layout-gt-xs="row" flex ng-show="vm.verticalStepper.step4.deficiencies!==undefined">

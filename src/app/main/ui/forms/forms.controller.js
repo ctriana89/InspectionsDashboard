@@ -40,7 +40,8 @@
                 garageDoorOperatorModel:"Electric",
                 picturesAndroid:[]
             },
-            step4: {}
+            step4: {},
+            step5: {}
         };
     vm.selectOptions=('Satisfactory,Not Applicable,None,See below')
         .split(',').map(function (state) {
@@ -99,7 +100,8 @@
                 step1: {},
                 step2: {},
                 step3: {},
-                step4: {}
+                step4: {},
+                step5: {}
             };
         }
         function uploadDocument(file) {
@@ -209,7 +211,7 @@
                     {text: 'PROPERTY ADDRESS: '+vm.verticalStepper.step1.ownerAddress, style: 'anotherStyle'},
                     {text: 'DATE OF INSPECTION: '+vm.verticalStepper.step2.dateOfInspection, style: 'anotherStyle'},
                     {text: 'WEATHER CONDITIONS AT TIME OF INSPECTION : '+ getSelectedConditions(vm.verticalStepper.step2.weatherCondition), style: 'anotherStyle'},
-                    {text: 'OWNER OCCUPIED : '+ vm.verticalStepper.step2.ownerOcuppied, style: 'anotherStyle'},
+                    {text: 'OWNER OCCUPIED : '+ (vm.verticalStepper.step2.ownerOcuppied==undefined || vm.verticalStepper.step2.ownerOcuppied==false)?'No':'Yes', style: 'anotherStyle'},
                     {text: 'PRESENT AT INSPECTION : '+ getSelectedConditions(vm.verticalStepper.step2.presentAtInspection), style: 'anotherStyle', pageBreak: 'after'},
                     GeneralNotesAndLiability(),
                     CostEstimates(),
@@ -218,7 +220,10 @@
                     addPicturesToTheDocument(vm.multiplesFiles['3']),
                     appliances(),
                     estimatedCost(vm.verticalStepper.step4),
-                    addPicturesToTheDocument(vm.multiplesFiles['4'])
+                    addPicturesToTheDocument(vm.multiplesFiles['4']),
+                    airConditioningHeatingAndVentingSystems(),
+                    estimatedCost(vm.verticalStepper.step5),
+                    addPicturesToTheDocument(vm.multiplesFiles['5'])
                 ],
                 styles: {
                     header: {
@@ -510,7 +515,7 @@
                         {text: 'Fireplace/chimney'},
                         {text: vm.verticalStepper.step3.fireplaceChimney}
                     ]
-                }, {text: vm.verticalStepper.step3.deficiencies }
+                }, {text: (vm.verticalStepper.step3.deficiencies!==undefined)?vm.verticalStepper.step3.deficiencies :""}
             ]
         }
 
@@ -521,7 +526,7 @@
             return [
                 {text: "APPLIANCES", style: "h6_header", pageBreak: 'before', tocItem: true},
                 {
-                    text: "Our inspection of major appliances in the kitchen is a combined visual and functional inspection. Power must be supplied to operate appliances. Calibrations to cooking equipment are not evaluated. Please take note that dishwashers can fail at any time due to their complexity. Our purpose is to determine if the system is free of leaks and/or excessive corrosion. Please note that this is beyond the scope of this inspection to operate valves or disconnect supply hoses to these     appliances as they can leak at any time and should be considered a part of normal maintenance."
+                    text: "Our inspection of major appliances in the kitchen is a combined visual and functional inspection. Power must be supplied to operate appliances. Calibrations to cooking equipment are not evaluated. Please take note that dishwashers can fail at any time due to their complexity. Our purpose is to determine if the system is free of leaks and/or excessive corrosion. Please note that this is beyond the scope of this inspection to operate valves or disconnect supply hoses to these     appliances as they can leak at any time and should be considered a part of normal maintenance.", style: "p"
 
                 },
                 {text: "Observed Deficiencies and Notes:", style: "h6_header"},
@@ -590,38 +595,113 @@
                         {text: 'Dryer'},
                         {text: vm.verticalStepper.step4.dryer}
                     ]
-                },{text: vm.verticalStepper.step4.deficiencies }
+                },{text: (vm.verticalStepper.step4.deficiencies!==undefined)?vm.verticalStepper.step4.deficiencies:'' }
                 ]
-        };
+        }
+        /**
+         * Return page "AIR CONDITIONING, HEATING AND VENTING SYSTEMS"
+         */
+        function airConditioningHeatingAndVentingSystems() {
+            return [
+                {text: "AIR CONDITIONING, HEATING AND VENTING SYSTEMS", style: "h6_header", pageBreak: 'before', tocItem: true},
+                {
+                    text: "This inspection determines operating temperatures and exterior condition of the air conditioning and heating systems. All ducts are checked for functional flow. Cover panels are not removed by our personnel. We are unable to determine the condition of sealed systems, i.e. air conditioners; however, temperatures of both the heating and cooling system are noted at the time of inspection. Although temperatures may be satisfactory at time of inspection, this is not to imply that your system is leak free or that it determines the sizing and/or balancing of your system. It is beyond the scope of this inspection to ignite pilot lights or to engage gas should the heating system be gas operated. It is beyond the scope of this inspection to dismantle or inspect internal components of heat exchangers and heating systems. Your local utility company will provide this service upon request. Wall units are checked for cooling only. No warranty is expressed or implied. WE RECOMMEND ALL AIR CONDITIONING UNITS SHOULD BE SERVICED TWICE A YEAR.", style: "p"
+                },
+                {text: "COOLING EQUIPMENT", style: "h6_header"},
+                {
+                    columns: [
+                        {text: 'Location'},
+                        {text: vm.verticalStepper.step5.CElocation}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Manufacturer'},
+                        {text: vm.verticalStepper.step5.CEmanufacturer}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Year'},
+                        {text: vm.verticalStepper.step5.CEyear}
+                    ]
+                },{
+                    columns: [
+                        {text: ' Temperature acceptable'},
+                        {text: (vm.verticalStepper.step5.CEtemperatureAcceptable!==undefined)?vm.verticalStepper.step5.CEtemperatureAcceptable: false}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Temperature Return'},
+                        {text: vm.verticalStepper.step5.CEtemperatureReturn}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Temperature Register'},
+                        {text: vm.verticalStepper.step5.CEtemperatureRegister}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Type of System'},
+                        {text: vm.verticalStepper.step5.CEtypeOfSystem}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Energy Source'},
+                        {text: vm.verticalStepper.step5.CEenergySource}
+                    ]
+                },
+                {text: "Heating", style: "h6_header"},
+                {
+                    columns: [
+                        {text: 'Temperature Return'},
+                        {text: vm.verticalStepper.step5.HtemperatureReturn}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Temperature Register'},
+                        {text: vm.verticalStepper.step5.HtemperatureRegister}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Type of System'},
+                        {text: vm.verticalStepper.step5.HtypeOfSystem}
+                    ]
+                },{
+                    columns: [
+                        {text: 'Energy Source'},
+                        {text: vm.verticalStepper.step5.HenergySource}
+                    ]
+                },
+                {text: (vm.verticalStepper.step5.deficiencies!==undefined)?vm.verticalStepper.step5.deficiencies :''}
+                ]
+        }
 
         function addPicturesToTheDocument(pictures) {
-            var temp = [];
-            for (var i = 0; i < pictures.length; i += 2) {
-                var second = i + 1;
-                temp.push({
-                    columns: [{
-                        image: pictures[i],
-                        fit: [250, 250]
-                    },
-                        (pictures[second] !== undefined) ? {
-                                image: pictures[second],
-                                fit: [250, 250]
-                            } : {}
-                    ]
-                });
-            }
-            // return {
-            //     columns: temp
-            // };
-            return temp;
+            if(pictures!==undefined) {
+                var temp = [];
+                for (var i = 0; i < pictures.length; i += 2) {
+                    var second = i + 1;
+                    temp.push({
+                        columns: [{
+                            image: pictures[i],
+                            fit: [250, 250]
+                        },
+                            (pictures[second] !== undefined) ? {
+                                    image: pictures[second],
+                                    fit: [250, 250]
+                                } : {}
+                        ]
+                    });
+                }
+                return temp;
+            }else return {};
         }
         function  estimatedCost(step) {
-            return {
+            return (step.minRange!==undefined)?{
                 columns: [
                     {text: ''},
-                    {text: "Estimated cost of repairs: " + step.minRange+" - "+step.maxRange ,pageBreak: 'after'}
+                    {text: "Estimated cost of repairs: " + step.minRange+" - "+step.maxRange, pageBreak: 'after'}
                 ]
-            };
+            }:{};
         }
         /**
          * Send form
