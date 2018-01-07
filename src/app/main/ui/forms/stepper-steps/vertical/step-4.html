@@ -117,57 +117,6 @@
             </md-select>
         </md-input-container>
     </div>
-    <div layout="column" layout-gt-xs="row">
-        <md-input-container flex="100" flex-gt-xs="100">
-      <textarea  name="comments" ng-model="vm.verticalStepper.step4.deficiencies"
-                 placeholder="Deficiencies">
-      </textarea>
-        </md-input-container>
-    </div>
-    <div layout="column" layout-gt-xs="row" ng-if="vm.verticalStepper.step4.deficiencies!==undefined">
-        <price-range step="vm.verticalStepper.step4"></price-range>
-    </div>
-    <div layout="column" layout-gt-xs="row" flex ng-show="vm.verticalStepper.step4.deficiencies!==undefined">
-        <md-input-container flex="100" flex-gt-xs="100">
-            <!--<div class="upload-file" -->
-            <!--ngf-select -->
-            <!--ng-model="vm.verticalStepper.step4.pictures" -->
-            <!--ngf-multiple="true" -->
-            <!--ngf-change="vm.uploadDocuments($files)" -->
-            <!--accept="image/*">select</div>-->
 
-
-            <div ng-if="!vm.deviceDetector.os.android"
-                 name="structuralSystems"
-                 ngf-select
-                 ngf-change="vm.uploadDocuments($files, '4')"
-                 ng-model="vm.verticalStepper.step4.pictures"
-                 ngf-multiple="true"
-                 class="upload-file"
-                 ngf-accept="'image/*'"
-                 ngf-pattern="'image/*'"
-                 ng-required="vm.verticalStepper.step4.deficiencies!==undefined">
-                <span ng-if="vm.multiplesFiles['4']==undefined">Please take some pictures and then click here to upload*</span>
-                <div class="file-upload-container" ng-repeat="pic in vm.multiplesFiles['4']">
-                    <img ngf-thumbnail="pic" class="thumb" height="100px">
-                </div>
-            </div>
-            <div ng-if="vm.deviceDetector.os.android" name="structuralSystems"
-                 ngf-select
-                 ngf-change="vm.uploadDocumentOneByOne($file, '4')"
-                 ng-model="vm.verticalStepper.step4.picture"
-                 class="upload-file"
-                 ngf-accept="'image/*'"
-                 ngf-pattern="'image/*'"
-                 ng-required="vm.verticalStepper.step4.deficiencies!==undefined">
-                <span ng-if="vm.multiplesFiles['4']==undefined">Select the pictures*</span>
-                <div class="file-upload-container" ng-repeat="pic in vm.multiplesFiles['4']">
-                    <div>
-                        <img ngf-thumbnail="pic" class="thumb">
-                        <a class="close-link" ng-click="vm.removeElementInArray(vm.multiplesFiles['4'],pic)"></a>
-                    </div>
-                </div>
-            </div>
-        </md-input-container>
-    </div>
+    <deficiencies step="vm.verticalStepper.step4" step-number="'4'" pictures-array="vm.multiplesFiles"></deficiencies>
 </div>

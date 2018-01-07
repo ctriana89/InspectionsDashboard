@@ -1,0 +1,121 @@
+<div>
+    <div layout="column" layout-gt-xs="row" flex >
+        <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
+            <input type="number" name="mainRoofAge" ng-model="vm.verticalStepper.step9.mainRoofAge"
+                   placeholder="Roof Age" required max="35">
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25"  flex-offset-lg="5" flex-offset-xl="5">
+            <p>Main Roof Covering</p>
+            <div  ng-repeat="element in vm.roofCoveringOptions" >
+                <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step9.mainRoofCovering)" ng-click="vm.toggle(element, vm.verticalStepper.step9.mainRoofCovering)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25"  flex-offset-lg="5" flex-offset-xl="5">
+            <p>Roof Pitch</p>
+            <div  ng-repeat="element in vm.roofPitchOptions" >
+                <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step9.mainRoofPitch)" ng-click="vm.toggle(element, vm.verticalStepper.step9.mainRoofPitch)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-switch md-no-ink ng-model="vm.verticalStepper.step9.secondaryRoof" aria-label="No Ink Effects">
+            Does this house have a secondary Roof?
+        </md-switch>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex ng-show="vm.verticalStepper.step9.secondaryRoof">
+        <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
+            <input type="number" name="secondaryRoofAge" ng-model="vm.verticalStepper.step9.secondaryRoofAge"
+                   placeholder="Secondary Roof Age" ng-required="m.verticalStepper.step9.secondaryRoof"  max="35">
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25"  flex-offset-lg="5" flex-offset-xl="5">
+            <p>Secondary Roof Covering</p>
+            <div  ng-repeat="element in vm.roofCoveringOptions" >
+                <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step9.secondaryRoofCovering)" ng-click="vm.toggle(element, vm.verticalStepper.step9.secondaryRoofCovering)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25"  flex-offset-lg="5" flex-offset-xl="5">
+            <p>Secondary Roof Pitch</p>
+            <div  ng-repeat="element in vm.roofPitchOptions" >
+                <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step9.secondaryRoofPitch)" ng-click="vm.toggle(element, vm.verticalStepper.step9.secondaryRoofPitch)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout="column" layout-gt-xs="row" >
+        <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
+            <p>Attic Access</p>
+            <div  ng-repeat="element in vm.atticAccessOptions" >
+                <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step9.atticAccess)" ng-click="vm.toggle(element, vm.verticalStepper.step9.atticAccess)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
+            <p>Attic Insulation/Ventilation</p>
+            <div  ng-repeat="element in vm.atticInsulationVentilationOptions" >
+                <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step9.atticInsulationVentilation)" ng-click="vm.toggle(element, vm.verticalStepper.step9.atticInsulationVentilation)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
+            <p>Roof/Attic Structure</p>
+            <div  ng-repeat="element in vm.roofStructureOptions" >
+                <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step9.roofStructure)" ng-click="vm.toggle(element, vm.verticalStepper.step9.roofStructure)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
+            <p>Woodwork</p>
+            <div  ng-repeat="element in vm.woodWorkOptions" >
+                <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step9.woodWork)" ng-click="vm.toggle(element, vm.verticalStepper.step9.woodWork)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
+            <p>Evidence of Leaks</p>
+            <div  ng-repeat="element in vm.leaksOptions" >
+                <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step9.leaks)" ng-click="vm.toggle(element, vm.verticalStepper.step9.leaks)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
+            <p>Tiles</p>
+            <div  ng-repeat="element in vm.brokenTilesOptions" >
+                <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step9.brokenTiles)" ng-click="vm.toggle(element, vm.verticalStepper.step9.brokenTiles)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
+            <p>Shingles/ Roll Roofing</p>
+            <div  ng-repeat="element in vm.rollRoffingOptions" >
+                <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step9.rollRoofing)" ng-click="vm.toggle(element, vm.verticalStepper.step9.rollRoofing)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
+            <p>Eve Edge/ Tie In's</p>
+            <div  ng-repeat="element in vm.EveEdgeOptions" >
+                <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step9.eveEdge)" ng-click="vm.toggle(element, vm.verticalStepper.step9.eveEdge)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+    </div>
+</div>
+
+<deficiencies step="vm.verticalStepper.step9" step-number="'9'" pictures-array="vm.multiplesFiles"></deficiencies>

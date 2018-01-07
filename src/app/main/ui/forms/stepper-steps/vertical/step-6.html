@@ -1,0 +1,110 @@
+<div class="md-inline-form">
+
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <label>Main Water Supply</label>
+            <md-select ng-model="vm.verticalStepper.step6.mainWaterSupply" name="mainWaterSupply" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.typeOfWaterSupplyOptions"  ng-value="state.abbrev"  >
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+            <div ng-messages="verticalstep6.mainWaterSupply.$error"
+                 ng-show="verticalstep6.mainWaterSupply.$touched"
+                 role="alert">
+                <div ng-message="required">
+                    <span>Main Water Supply is required.</span>
+                </div>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <label>Sewer</label>
+            <md-select ng-model="vm.verticalStepper.step6.sewer" class="md-no-underline" name="sewer" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.typeOfSewerOptions"  ng-value="state.abbrev"  >
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+            <div ng-messages="verticalstep6.sewer.$error"
+                 ng-show="verticalstep6.sewer.$touched"
+                 role="alert">
+                <div ng-message="required">
+                    <span>Sewer field is required.</span>
+                </div>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <label>Supply Piping</label>
+            <md-select ng-model="vm.verticalStepper.step6.supplyPiping" name="supplyPiping" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.typeOfPipingOptions"  ng-value="state.abbrev"  >
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+            <div ng-messages="verticalstep6.supplyPiping.$error"
+                 ng-show="verticalstep6.supplyPiping.$touched"
+                 role="alert">
+                <div ng-message="required">
+                    <span>Supply Piping is required.</span>
+                </div>
+            </div>
+
+
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <label>Supply Piping</label>
+            <md-select ng-model="vm.verticalStepper.step6.drainPiping" name="drainPiping" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.typeOfPipingOptions"  ng-value="state.abbrev"  >
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+            <div ng-messages="verticalstep6.drainPiping.$error"
+                 ng-show="verticalstep6.drainPiping.$touched"
+                 role="alert">
+                <div ng-message="required">
+                    <span>Drain Piping is required.</span>
+                </div>
+            </div>
+        </md-input-container>
+    </div>
+
+    <div layout="column" layout-gt-xs="row" flex>
+        Water Heater
+        <md-divider></md-divider>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <input type="text" name="location" ng-model="vm.verticalStepper.step6.location"
+                       placeholder="Location" required>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <input type="text" name="manufacturer" ng-model="vm.verticalStepper.step6.manufacturer"
+                       placeholder="Manufacturer" required>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <input type="number" name="year" ng-model="vm.verticalStepper.step6.year"
+                       placeholder="Year" required min="{{vm.currentYear-50}}" max="{{vm.currentYear}}">
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <input type="text" name="capacity" ng-model="vm.verticalStepper.step6.capacity"
+                       placeholder="Capacity" required>
+        </md-input-container>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <label>Energy Source</label>
+            <md-select ng-model="vm.verticalStepper.step6.energySource" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.typeOfSourceOptions"  ng-value="state.abbrev"  >
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <input type="text" name="safetyValves" ng-model="vm.verticalStepper.step6.safetyValves"
+                   placeholder="Safety Valves" required>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <input type="text" name="utilitySink" ng-model="vm.verticalStepper.step6.utilitySink"
+                   placeholder="Utility Sink" required>
+        </md-input-container>
+    </div>
+</div>
+
+<deficiencies step="vm.verticalStepper.step6" step-number="'6'" pictures-array="vm.multiplesFiles"></deficiencies>

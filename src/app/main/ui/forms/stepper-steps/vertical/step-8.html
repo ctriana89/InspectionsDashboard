@@ -1,0 +1,72 @@
+<div>
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-switch md-no-ink ng-model="vm.verticalStepper.step8.pool" aria-label="No Ink Effects">
+            Does this house have a pool?
+        </md-switch>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex ng-show="vm.verticalStepper.step8.pool">
+        <md-input-container flex="100" flex-gt-xs="80"  flex-offset-lg="8" flex-offset-xl="8">
+            <p>Pool contain:</p>
+            <div  ng-repeat="element in vm.poolContainsOptions" >
+                <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step8.contains)" ng-click="vm.toggle(element, vm.verticalStepper.step8.contains)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="80"  flex-offset-lg="8" flex-offset-xl="8">
+            <p>Water Level</p>
+            <md-radio-group ng-model="vm.verticalStepper.step8.poolWaterLevel" class="md-primary">
+                <md-radio-button class="md-primary"
+                                 ng-repeat="element in vm.poolWaterLevelOptions"
+                                 ng-value="element">{{element}}<br/>
+                </md-radio-button>
+            </md-radio-group>
+        </md-input-container>
+          <md-input-container flex="100" flex-gt-xs="80"  flex-offset-lg="8" flex-offset-xl="8">
+              <p>Equipment:</p>
+              <div  ng-repeat="element in vm.poolEquipmentOptions" >
+                  <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step8.equipment)" ng-click="vm.toggle(element, vm.verticalStepper.step8.equipment)">
+                      {{ element}}
+                  </md-checkbox>
+              </div>
+          </md-input-container>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex>
+
+        <md-switch md-no-ink ng-model="vm.verticalStepper.step8.sprinkler" aria-label="No Ink Effects">
+            Does this house have sprinklers?
+        </md-switch>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex ng-show="vm.verticalStepper.step8.sprinkler">
+        <md-input-container flex="100" flex-gt-xs="80"  flex-offset-lg="8" flex-offset-xl="8">
+            <p>System:</p>
+            <div  ng-repeat="element in vm.sprinklerSystemOptions" >
+                <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step8.sprinklerSystem)" ng-click="vm.toggle(element, vm.verticalStepper.step8.sprinklerSystem)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="80"  flex-offset-lg="8" flex-offset-xl="8">
+            <p>Water Source:</p>
+            <div  ng-repeat="element in vm.sprinklerWaterSourceOptions">
+                <md-checkbox aria-label="element"  ng-checked="vm.exists(element, vm.verticalStepper.step8.waterSource)" ng-click="vm.toggle(element, vm.verticalStepper.step8.waterSource)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="80"  flex-offset-lg="8" flex-offset-xl="8">
+            <p>Water Source:</p>
+            <div  ng-repeat="element in vm.sprinklerEquipmentOptions">
+                <md-checkbox aria-label="element"  ng-checked="vm.exists(element, vm.verticalStepper.step8.sprinklerEquipment)" ng-click="vm.toggle(element, vm.verticalStepper.step8.sprinklerEquipment)">
+                    {{ element}}
+                </md-checkbox>
+            </div>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <input type="number" name="numberOfZones" ng-model="vm.verticalStepper.step8.numberOfZones"
+                   placeholder="Number Of Zones" >
+        </md-input-container>
+    </div>
+</div>
+
+<deficiencies ng-show="vm.verticalStepper.step8.sprinkler || vm.verticalStepper.step8.pool" step="vm.verticalStepper.step8" step-number="'8'" pictures-array="vm.multiplesFiles"></deficiencies>

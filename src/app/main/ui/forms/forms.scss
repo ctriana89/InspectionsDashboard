@@ -131,3 +131,38 @@ a.remove-nda{
 .close-link:after {
     transform: rotate(-45deg);
 }
+.container {
+    padding: 10px 10px 40px 10px;
+    position: relative;
+    margin: 0 auto 0 auto;
+    height: 100%;
+}
+.container .signature {
+    margin: 0 auto;
+    cursor: pointer;
+}
+.container .signature canvas {
+    border: 1px solid #999;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.container .buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+.container .sizes {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.container .sizes input {
+    width: 4em;
+    text-align: center;
+}
+.result {
+    border: 1px solid blue;
+    margin: 30px auto 0 auto;
+    height: 220px;
+    width: 568px;
+}

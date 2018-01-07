@@ -1,10 +1,16 @@
 <div class="md-inline-form">
     <div layout="column" layout-gt-xs="row" flex>
-        <md-input-container flex="100" flex-gt-xs="50">
+        <md-input-container flex="100" flex-gt-xs="75">
             <input type="text" name="ownerName" ng-model="vm.verticalStepper.step1.ownerName"
-                   placeholder="Owner Name" required>
+                   placeholder="Owner Name" required >
         </md-input-container>
-        <md-input-container flex="100" flex-gt-xs="50">
+        <md-input-container flex="100" flex-gt-xs="25">
+            <input type="number" name="yearsOld" ng-model="vm.verticalStepper.step1.yearsOld"
+                   placeholder="Year of Construction" required min="1800" max="{{vm.currentYear}}">
+        </md-input-container>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100" flex-gt-xs="100">
             <input type="text" name="ownerAddress" ng-model="vm.verticalStepper.step1.ownerAddress"
                    placeholder="Address"
                    required>

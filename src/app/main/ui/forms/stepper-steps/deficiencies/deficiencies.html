@@ -1,0 +1,45 @@
+<div layout="column" layout-gt-xs="row">
+    <md-input-container flex="100" flex-gt-xs="100">
+      <textarea  name="comments" ng-model="step.deficiencies"
+                 placeholder="Deficiencies">
+      </textarea>
+    </md-input-container>
+</div>
+<div layout="column" layout-gt-xs="row" ng-if="step.deficiencies!==undefined">
+    <price-range step="step"></price-range>
+</div>
+<div layout="column" layout-gt-xs="row" flex ng-show="step.deficiencies!==undefined">
+    <md-input-container flex="100" flex-gt-xs="100">
+        <div ng-if="!vm.deviceDetector.os.android"
+             name="structuralSystems"
+             ngf-select
+             ngf-change="vm.uploadDocuments($files, vm.stepNumber)"
+             ng-model="step.pictures"
+             ngf-multiple="true"
+             class="upload-file"
+             ngf-accept="'image/*'"
+             ngf-pattern="'image/*'"
+             ng-required="step.deficiencies!==undefined">
+            <span ng-if="vm.picturesArray[vm.stepNumber]==undefined">Please take some pictures and then click here to upload*</span>
+            <div class="file-upload-container" ng-repeat="pic in vm.picturesArray[vm.stepNumber]">
+                <img ngf-thumbnail="pic" class="thumb" height="100px">
+            </div>
+        </div>
+        <div ng-if="vm.deviceDetector.os.android" name="structuralSystems"
+             ngf-select
+             ngf-change="vm.uploadDocumentOneByOne($file, vm.stepNumber)"
+             ng-model="step.picture"
+             class="upload-file"
+             ngf-accept="'image/*'"
+             ngf-pattern="'image/*'"
+             ng-required="step.deficiencies!==undefined">
+            <span ng-if="vm.picturesArray[vm.stepNumber]==undefined">Select the pictures*</span>
+            <div class="file-upload-container" ng-repeat="pic in vm.picturesArray[vm.stepNumber]">
+                <div>
+                    <img ngf-thumbnail="pic" class="thumb">
+                    <a class="close-link" ng-click="vm.removeElementInArray(vm.picturesArray[vm.stepNumber],pic)"></a>
+                </div>
+            </div>
+        </div>
+    </md-input-container>
+</div>

@@ -1,0 +1,18 @@
+<div class="md-inline-form">
+
+</div>
+<div class="container" style="max-width:700px; max-height:300px">
+    <signature-pad accept="accept" clear="clear" height="220" width="568" dataurl="dataurl"></signature-pad>
+
+    <div class="buttons">
+        <md-button ng-click="clear()">Clear</md-button>
+        <!--<md-button md-no-ink ng-click="dataurl = signature.dataUrl" ng-disabled="!signature">Reset</md-button>-->
+        <md-button md-no-ink class="md-primary" ng-click="signature = accept()">Sign</md-button>
+    </div>
+
+</div>
+{{dataurl}}
+<!--<div class="result" ng-show="signature">-->
+<!--<img ng-src="{{ signature.dataUrl }}">-->
+<!--</div>-->
+</div>

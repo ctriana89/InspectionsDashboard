@@ -52,23 +52,32 @@
         <!-- VERTICAL STEPPER -->
         <form name="verticalStepper" ms-vertical-stepper ng-submit="vm.submitVerticalStepper()"
               ng-model="vm.verticalStepper" novalidate>
-            <ms-vertical-stepper-step ng-form="verticalStep1" step="1" step-title="'Owner'">
+            <ms-vertical-stepper-step ng-form="verticalStep1" step="1" step-title="vm.verticalStepper.step1.name">
                 <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-1.html'"></div>
             </ms-vertical-stepper-step>
-
-            <ms-vertical-stepper-step ng-form="verticalStep2" step="2" step-title="'General Considerations'">
+            <ms-vertical-stepper-step ng-form="verticalStep2" step="2" step-title="vm.verticalStepper.step2.name">
                 <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-2.html'"></div>
             </ms-vertical-stepper-step>
-
-            <ms-vertical-stepper-step ng-form="verticalStep3" step="3" step-title="'Structural Systems'" >
+            <ms-vertical-stepper-step ng-form="verticalStep3" step="3" step-title="vm.verticalStepper.step3.name">
                 <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-3.html'"></div>
             </ms-vertical-stepper-step>
-
-            <ms-vertical-stepper-step ng-form="verticalStep4" step="4" step-title="'Appliances'">
+            <ms-vertical-stepper-step ng-form="verticalStep4" step="4" step-title="vm.verticalStepper.step4.name">
                 <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-4.html'"></div>
             </ms-vertical-stepper-step>
-            <ms-vertical-stepper-step ng-form="verticalStep5" step="5" step-title="'Air Conditioning, Heating and Venting Systems'">
+            <ms-vertical-stepper-step ng-form="verticalStep5" step="5" step-title="vm.verticalStepper.step5.name">
                 <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-5.html'"></div>
+            </ms-vertical-stepper-step>
+            <ms-vertical-stepper-step ng-form="verticalStep6" step="6" step-title="vm.verticalStepper.step6.name">
+                <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-6.html'"></div>
+            </ms-vertical-stepper-step>
+            <ms-vertical-stepper-step ng-form="verticalStep7" step="7" step-title="vm.verticalStepper.step7.name">
+                <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-7.html'"></div>
+            </ms-vertical-stepper-step>
+            <ms-vertical-stepper-step ng-form="verticalStep8" step="8" step-title="vm.verticalStepper.step8.name">
+                <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-8.html'"></div>
+            </ms-vertical-stepper-step>
+            <ms-vertical-stepper-step ng-form="verticalStep9" step="9" step-title="vm.verticalStepper.step9.name">
+                <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-9.html'"></div>
             </ms-vertical-stepper-step>
 
             <!--<ms-vertical-stepper-step ng-form="verticalStep5" step="5" step-title="'Conditions at time of inspection'">-->

@@ -14,6 +14,8 @@
             'xeditable',
             'ngFileUpload',
             'ng.deviceDetector',
+            'ngMdIcons',
+            'signature',
 
 
             // Core

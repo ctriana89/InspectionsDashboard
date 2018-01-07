@@ -1,0 +1,117 @@
+<div class="md-inline-form">
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <input type="text" name="mainServiceDisconnect" ng-model="vm.verticalStepper.step7.mainServiceDisconnect"
+                   placeholder="Main Service Disconnect" required>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <input type="text" name="volts" ng-model="vm.verticalStepper.step7.volts"
+                   placeholder="Volts" required>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <input type="text" name="location" ng-model="vm.verticalStepper.step7.location"
+                   placeholder="Location" required>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <label>Service Entrance Type</label>
+            <md-select ng-model="vm.verticalStepper.step7.serviceEntranceType" name="serviceEntranceType" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.typeOfElecticServiceOptions"  ng-value="state.abbrev"  >
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+            <div ng-messages="verticalstep7.serviceEntranceType.$error"
+                 ng-show="verticalstep7.serviceEntranceType.$touched"
+                 role="alert">
+                <div ng-message="required">
+                    <span>Service Entrance Type is required.</span>
+                </div>
+            </div>
+            
+        </md-input-container>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex>
+
+        <md-input-container flex="100" flex-gt-xs="25">
+            <input type="text" name="typeOfWiring" ng-model="vm.verticalStepper.step7.typeOfWiring"
+                       placeholder="Type of wiring" required>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <label>Circuit breakers</label>
+            <md-select ng-model="vm.verticalStepper.step7.circuitBreakers" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+        <label>GFI breakers</label>
+        <md-select ng-model="vm.verticalStepper.step7.GFIBreakers" class="md-no-underline" required md-no-asterisk="false">
+            <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+                {{state.abbrev}}
+            </md-option>
+        </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <label>Smoke alarm</label>
+            <md-select ng-model="vm.verticalStepper.step7.smokeAlarm" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <label>Ceiling fan/s</label>
+            <md-select ng-model="vm.verticalStepper.step7.ceilingFans" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <md-switch md-no-ink ng-model="vm.verticalStepper.step7.appliancesGrounded" aria-label="No Ink Effects">
+                Are appliances grounded?
+            </md-switch>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <md-switch md-no-ink ng-model="vm.verticalStepper.step7.doorbell" aria-label="No Ink Effects">
+                Doorbell?
+            </md-switch>
+        </md-input-container>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <label>Electric outlets</label>
+            <md-select ng-model="vm.verticalStepper.step7.electricOutlets" name="serviceEntranceType" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.typeOfElecticOutletOptions"  ng-value="state.abbrev"  >
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+            <div ng-messages="verticalstep7.electricOutlets.$error"
+                 ng-show="verticalstep7.electricOutlets.$touched"
+                 role="alert">
+                <div ng-message="required">
+                    <span>Electric outlets is required.</span>
+                </div>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100" flex-gt-xs="25">
+            <label>Switches</label>
+            <md-select ng-model="vm.verticalStepper.step7.switches" name="switches" class="md-no-underline" required md-no-asterisk="false">
+                <md-option ng-repeat="state in vm.typeOfElecticSwitchesOptions"  ng-value="state.abbrev"  >
+                    {{state.abbrev}}
+                </md-option>
+            </md-select>
+            <div ng-messages="verticalstep7.switches.$error"
+                 ng-show="verticalstep7.switches.$touched"
+                 role="alert">
+                <div ng-message="required">
+                    <span>Switches is required.</span>
+                </div>
+            </div>
+        </md-input-container>
+    </div>
+</div>
+
+<deficiencies step="vm.verticalStepper.step7" step-number="'7'" pictures-array="vm.multiplesFiles"></deficiencies>
