@@ -2,128 +2,162 @@
   <div layout="column" layout-gt-xs="row" flex>
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Dwelling</label>
-      <md-select ng-model="vm.verticalStepper.step3.dwelling" class="md-no-underline" required md-no-asterisk="false">
+      <md-select ng-model="vm.verticalStepper.step3.dwelling" class="md-no-underline" required md-no-asterisk="false" name="dwelling">
         <md-option ng-repeat="state in vm.typeOfDwellingOptions"  ng-value="state.abbrev"  >
           {{state.abbrev}}
         </md-option>
       </md-select>
-      <div ng-messages="verticalStep3.dwelling.$error"
-           ng-show="verticalStep3.dwelling.$touched"
-           role="alert">
-        <div ng-message="required">
-          <span>Dwelling field is required.</span>
-        </div>
+      <div ng-messages="verticalStep3.dwelling.$error">
+        <div ng-message="required">This is required!</div>
       </div>
     </md-input-container>
     <md-input-container flex="100" flex-gt-xs="20">
-      <input type="text" name="foundations" ng-model="vm.verticalStepper.step3.foundations"
+      <input type="text" name="foundations"
+             ng-model="vm.verticalStepper.step3.foundations"
              placeholder="Foundation"
         required>
-      <div ng-messages="verticalStep3.foundation.$error"
-           ng-show="verticalStep3.foundation.$touched"
-           role="alert">
-        <div ng-message="required">
-          <span>Foundation field is required.</span>
-        </div>
+      <div ng-messages="verticalStep3.foundations.$error">
+        <div ng-message="required">This is required!</div>
       </div>
     </md-input-container>
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Construction</label>
-      <md-select ng-model="vm.verticalStepper.step3.construction" class="md-no-underline" required md-no-asterisk="false">
+      <md-select ng-model="vm.verticalStepper.step3.construction"
+                 class="md-no-underline" required
+                 md-no-asterisk="false" name="construction">
         <md-option ng-repeat="state in vm.typeOfConstructionOptions"  ng-value="state.abbrev"  >
           {{state.abbrev}}
         </md-option>
       </md-select>
-      <div ng-messages="verticalStep3.construction.$error"
-           ng-show="verticalStep3.construction.$touched"
-           role="alert">
-        <div ng-message="required">
-          <span>Construction field is required.</span>
-        </div>
+      <div ng-messages="verticalStep3.construction.$error">
+        <div ng-message="required">This is required!</div>
       </div>
     </md-input-container>
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Siding</label>
-      <md-select ng-model="vm.verticalStepper.step3.siding" class="md-no-underline" required md-no-asterisk="false">
+      <md-select ng-model="vm.verticalStepper.step3.siding"
+                 class="md-no-underline"
+                 required
+                 md-no-asterisk="false"
+                name="siding">
         <md-option ng-repeat="state in vm.typeOfSidingOptions"  ng-value="state.abbrev"  >
           {{state.abbrev}}
         </md-option>
       </md-select>
-      <div ng-messages="verticalStep3.siding.$error"
-           ng-show="verticalStep3.siding.$touched"
-           role="alert">
-        <div ng-message="required">
-          <span>Siding field is required.</span>
-        </div>
+      <div ng-messages="verticalStep3.siding.$error">
+        <div ng-message="required">This is required!</div>
       </div>
     </md-input-container>
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Doors (Interior & Exterior)</label>
-      <md-select ng-model="vm.verticalStepper.step3.doors" class="md-no-underline" required md-no-asterisk="false">
+      <md-select ng-model="vm.verticalStepper.step3.doors"
+                 class="md-no-underline"
+                 required
+                 md-no-asterisk="false"
+                  name="doors">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
           {{state.abbrev}}
         </md-option>
       </md-select>
+      <div ng-messages="verticalStep3.doors.$error">
+        <div ng-message="required">This is required!</div>
+      </div>
     </md-input-container>
   </div>
   <div layout="column" layout-gt-xs="row">
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Sliding doors</label>
-      <md-select ng-model="vm.verticalStepper.step3.slidingDoors" class="md-no-underline" required md-no-asterisk="false">
+      <md-select ng-model="vm.verticalStepper.step3.slidingDoors"
+                 class="md-no-underline"
+                 required
+                 md-no-asterisk="false"
+                name="slidingDoors">
         <md-option ng-repeat="state in vm.selectOptions" ng-value="state.abbrev">
           {{state.abbrev}}
         </md-option>
       </md-select>
+      <div ng-messages="verticalStep3.slidingDoors.$error">
+        <div ng-message="required">This is required!</div>
+      </div>
     </md-input-container>
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Windows</label>
-      <md-select ng-model="vm.verticalStepper.step3.windows" class="md-no-underline" required md-no-asterisk="false">
+      <md-select ng-model="vm.verticalStepper.step3.windows"
+                 class="md-no-underline"
+                 required md-no-asterisk="false"
+      name="windows">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
           {{state.abbrev}}
         </md-option>
       </md-select>
+      <div ng-messages="verticalStep3.windows.$error">
+        <div ng-message="required">This is required!</div>
+      </div>
     </md-input-container>
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Walls</label>
-      <md-select ng-model="vm.verticalStepper.step3.walls" class="md-no-underline" required md-no-asterisk="false">
+      <md-select ng-model="vm.verticalStepper.step3.walls" class="md-no-underline"
+                 required md-no-asterisk="false" name="walls">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev"  >
           {{state.abbrev}}
         </md-option>
       </md-select>
+      <div ng-messages="verticalStep3.walls.$error">
+        <div ng-message="required">This is required!</div>
+      </div>
     </md-input-container>
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Floors</label>
-      <md-select ng-model="vm.verticalStepper.step3.floors" class="md-no-underline" required md-no-asterisk="false">
+      <md-select ng-model="vm.verticalStepper.step3.floors" class="md-no-underline"
+                 required md-no-asterisk="false" name="floors">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
           {{state.abbrev}}
         </md-option>
       </md-select>
+      <div ng-messages="verticalStep3.floors.$error">
+        <div ng-message="required">This is required!</div>
+      </div>
     </md-input-container>
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Stairways</label>
-      <md-select ng-model="vm.verticalStepper.step3.stairways" class="md-no-underline" required md-no-asterisk="false">
+      <md-select ng-model="vm.verticalStepper.step3.stairways"
+                 class="md-no-underline" required
+                 md-no-asterisk="false" name="stairways">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
           {{state.abbrev}}
         </md-option>
       </md-select>
+      <div ng-messages="verticalStep3.stairways.$error">
+        <div ng-message="required">This is required!</div>
+      </div>
     </md-input-container>
   </div>
   <div layout="column" layout-gt-xs="row">
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Porches, balconies, Patio</label>
-      <md-select ng-model="vm.verticalStepper.step3.porchesBalconiesPatio" class="md-no-underline" required md-no-asterisk="false">
+      <md-select ng-model="vm.verticalStepper.step3.porchesBalconiesPatio"
+                 class="md-no-underline" required
+                 name="porchesBalconiesPatio" md-no-asterisk="false">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
           {{state.abbrev}}
         </md-option>
       </md-select>
+      <div ng-messages="verticalStep3.porchesBalconiesPatio.$error">
+        <div ng-message="required">This is required!</div>
+      </div>
     </md-input-container>
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Decks, and carports</label>
-      <md-select ng-model="vm.verticalStepper.step3.decksCarports" class="md-no-underline" required md-no-asterisk="false">
+      <md-select ng-model="vm.verticalStepper.step3.decksCarports"
+                 class="md-no-underline" required md-no-asterisk="false"
+      name="decksCarports">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
           {{state.abbrev}}
         </md-option>
       </md-select>
+      <div ng-messages="verticalStep3.decksCarports.$error">
+        <div ng-message="required">This is required!</div>
+      </div>
     </md-input-container>
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Garage door operator(s)</label>
@@ -139,14 +173,18 @@
         <md-radio-button value="Manual"> Manual </md-radio-button>
       </md-radio-group>
     </md-input-container>
-
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Fireplace/chimney</label>
-      <md-select ng-model="vm.verticalStepper.step3.fireplaceChimney"  class="md-no-underline" required md-no-asterisk="false">
+      <md-select ng-model="vm.verticalStepper.step3.fireplaceChimney"
+                 class="md-no-underline" required md-no-asterisk="false"
+      name="fireplaceChimney">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
           {{state.abbrev}}
         </md-option>
       </md-select>
+      <div ng-messages="verticalStep3.fireplaceChimney.$error">
+        <div ng-message="required">This is required!</div>
+      </div>
     </md-input-container>
   </div>
   <deficiencies step="vm.verticalStepper.step3" step-number="'3'" pictures-array="vm.multiplesFiles"></deficiencies>

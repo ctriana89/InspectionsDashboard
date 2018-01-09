@@ -24,12 +24,12 @@
     </div>
     <div layout="column" layout-gt-xs="row" flex>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
-            <input type="text" name="temperatureReturn" ng-model="vm.verticalStepper.step5.CEtemperatureReturn"
+            <input type="number" name="temperatureReturn" ng-model="vm.verticalStepper.step5.CEtemperatureReturn"
                        placeholder="Return" required>
             <md-icon md-font-icon="icon-temperature-fahrenheit" class="s22"></md-icon>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
-            <input type="text" name="temperatureRegister" ng-model="vm.verticalStepper.step5.CEtemperatureRegister"
+            <input type="number" name="temperatureRegister" ng-model="vm.verticalStepper.step5.CEtemperatureRegister"
                        placeholder="Register" required>
             <md-icon md-font-icon="icon-temperature-fahrenheit" class="s22"></md-icon>
         </md-input-container>
@@ -37,7 +37,7 @@
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
             <label>Type of System</label>
             <md-select ng-model="vm.verticalStepper.step5.CEtypeOfSystem" class="md-no-underline" required md-no-asterisk="false">
-                <md-option ng-repeat="state in vm.typeOfSystemOptions"  ng-value="state.abbrev"  >
+                <md-option ng-repeat="state in vm.typeOfSystemOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
@@ -45,7 +45,7 @@
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
             <label>Energy Source</label>
             <md-select ng-model="vm.verticalStepper.step5.CEenergySource" class="md-no-underline" required md-no-asterisk="false">
-                <md-option ng-repeat="state in vm.typeOfSourceOptions"  ng-value="state.abbrev"  >
+                <md-option ng-repeat="state in vm.typeOfSourceOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
@@ -59,20 +59,20 @@
     <div layout="column" layout-gt-xs="row" flex>
 
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
-            <input type="text" name="temperatureReturn" ng-model="vm.verticalStepper.step5.HtemperatureReturn"
+            <input type="number" name="temperatureReturn" ng-model="vm.verticalStepper.step5.HtemperatureReturn"
                    placeholder="Return" required>
 
             <md-icon md-font-icon="icon-temperature-fahrenheit" class="s22"></md-icon>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
-            <input type="text" name="temperatureRegister" ng-model="vm.verticalStepper.step5.HtemperatureRegister"
+            <input type="number" name="temperatureRegister" ng-model="vm.verticalStepper.step5.HtemperatureRegister"
                    placeholder="Register" required>
             <md-icon md-font-icon="icon-temperature-fahrenheit" class="s22"></md-icon>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
             <label>Type of System</label>
             <md-select ng-model="vm.verticalStepper.step5.HtypeOfSystem" class="md-no-underline" required md-no-asterisk="false">
-                <md-option ng-repeat="state in vm.typeOfSystemOptions"  ng-value="state.abbrev"  >
+                <md-option ng-repeat="state in vm.typeOfSystemOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
@@ -80,7 +80,7 @@
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
             <label>Energy Source</label>
             <md-select ng-model="vm.verticalStepper.step5.HenergySource" class="md-no-underline" required md-no-asterisk="false">
-                <md-option ng-repeat="state in vm.typeOfSourceOptions"  ng-value="state.abbrev"  >
+                <md-option ng-repeat="state in vm.typeOfSourceOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>

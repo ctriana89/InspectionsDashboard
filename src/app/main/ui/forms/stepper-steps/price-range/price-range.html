@@ -1,31 +1,19 @@
 <md-input-container flex="100" flex-gt-xs="25">
 
-    <md-icon  style="display:inline-block;"><ng-md-icon icon="attach_money"></ng-md-icon></md-icon>
+    <md-icon  style="display:inline-block;">
+        <ng-md-icon icon="attach_money"></ng-md-icon>
+    </md-icon>
         <input name="minRange" ng-model="vm.step.minRange"
                placeholder="Minimun amount" type="number"
                required  step="0.01">
-        <!--<div ng-messages="verticalStep3.dwelling.$error"-->
-             <!--ng-show="verticalStep3.dwelling.$touched"-->
-             <!--role="alert">-->
-            <!--<div ng-message="required">-->
-                <!--<span>Minimun amount is required.</span>-->
-            <!--</div>-->
-        <!--</div>-->
     </md-input-container>
     <span>--</span>
     <md-input-container flex="100" flex-gt-xs="25">
 
-        <md-icon  style="display:inline-block;"><ng-md-icon icon="attach_money"></ng-md-icon></md-icon>
+        <md-icon  style="display:inline-block;">
+            <ng-md-icon icon="attach_money"></ng-md-icon>
+        </md-icon>
         <input name="maxRange" ng-model="vm.step.maxRange"
                placeholder="Maximun amount" type="number"
                required  step="0.01">
-        <!--<div ng-messages="verticalStep3.dwelling.$error"-->
-             <!--ng-show="verticalStep3.dwelling.$touched"-->
-             <!--role="alert">-->
-            <!--<div ng-message="required">-->
-                <!--<span>Minimun amount is required.</span>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<md-icon md-svg-src="img/icons/ic_euro_24px.svg"></md-icon>-->
-
     </md-input-container>

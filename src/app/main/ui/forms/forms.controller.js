@@ -388,6 +388,8 @@
             //     pdfMake.createPdf(docDefinition).download();
             // }
             // else {
+            console.log(docDefinition);
+            console.log(JSON.stringify(docDefinition));
             pdfMake.createPdf(docDefinition).open();
             //}
 
@@ -629,7 +631,8 @@
                         {text: 'Fireplace/chimney', style:'p_header'},
                         {text: vm.verticalStepper.step3.fireplaceChimney}
                     ]
-                }, {text: (vm.verticalStepper.step3.deficiencies !== undefined) ? vm.verticalStepper.step3.deficiencies : ""}
+                },
+                deficiencies(vm.verticalStepper.step3.deficiencies)
             ]
         }
 
@@ -710,7 +713,8 @@
                         {text: 'Dryer', style:'p_header'},
                         {text: vm.verticalStepper.step4.dryer, style: "p"}
                     ]
-                }, {text: (vm.verticalStepper.step4.deficiencies !== undefined) ? vm.verticalStepper.step4.deficiencies : ''}
+                },
+                deficiencies(vm.verticalStepper.step4.deficiencies)
             ]
         }
 
@@ -793,7 +797,7 @@
                         {text: vm.verticalStepper.step5.HenergySource, style: "p"}
                     ]
                 },
-                {text: (vm.verticalStepper.step5.deficiencies !== undefined) ? vm.verticalStepper.step5.deficiencies : ''}
+                deficiencies(vm.verticalStepper.step5.deficiencies)
             ]
         }
 
@@ -874,7 +878,7 @@
                         {text: vm.verticalStepper.step6.utilitySink, style: "p"}
                     ]
                 },
-                {text: (vm.verticalStepper.step6.deficiencies !== undefined) ? vm.verticalStepper.step6.deficiencies : ''}
+                deficiencies(vm.verticalStepper.step6.deficiencies)
             ]
         }
 
@@ -969,7 +973,7 @@
                         {text: vm.verticalStepper.step7.switches, style: "p"}
                     ]
                 },
-                {text: (vm.verticalStepper.step7.deficiencies !== undefined) ? vm.verticalStepper.step7.deficiencies : ''}
+                deficiencies(vm.verticalStepper.step7.deficiencies)
             ]
         }
 
@@ -1005,13 +1009,13 @@
                 {
                     columns: [
                         {text: 'Water Level', style: 'p_header'},
-                        {text: (m.verticalStepper.step8.pool)?vm.verticalStepper.step8.poolWaterLevel: 'N/A', style: "p"}
+                        {text: (vm.verticalStepper.step8.pool)?vm.verticalStepper.step8.poolWaterLevel: 'N/A', style: "p"}
                     ]
                 },
                 {
                     columns: [
                         {text: 'Pool Equipment and Finish', style: 'p_header'},
-                        {text: (m.verticalStepper.step8.pool)?beautifyArray(vm.verticalStepper.step8.equipment):'N/A', style: "p"}
+                        {text: (vm.verticalStepper.step8.pool)?beautifyArray(vm.verticalStepper.step8.equipment):'N/A', style: "p"}
                     ]
                 },
                 {text: "Be advised,", style: "h6_header"},
@@ -1052,9 +1056,20 @@
                         {text: (vm.verticalStepper.step8.sprinkler)?vm.verticalStepper.step8.numberOfZones:'N/A', style: "p"}
                     ]
                 },
-                {text: (vm.verticalStepper.step8.deficiencies !== undefined) ? vm.verticalStepper.step8.deficiencies : '', style: "p"}
+                deficiencies(vm.verticalStepper.step8.deficiencies)
             ]
         }
+
+        /**
+         * Return Deficiencies
+         */
+        function deficiencies(deficiencies) {
+            return [
+                {text: (deficiencies !== undefined) ? 'Deficiencies' : '', style: ['p_header', 'margin_top']},
+                {text: (deficiencies !== undefined) ? deficiencies : '', style: ['p']}
+            ];
+        }
+
         /**
          * Return page "ROOF"
          */
@@ -1172,7 +1187,7 @@
                 {
                     text: "Secondary roof has a remaining life expectancy of "+calculateRoofExpectansyLive(vm.verticalStepper.step9.secondaryRoofAge, vm.verticalStepper.step9.secondaryRoofCovering)+" years.", style: "p"
                 },
-                {text: (vm.verticalStepper.step9.deficiencies !== undefined) ? vm.verticalStepper.step9.deficiencies : ''}
+                deficiencies(vm.verticalStepper.step9.deficiencies)
             ]
         }
 
@@ -1202,7 +1217,7 @@
                     columns: [
                         {text: ''},
                         {
-                            text: "Estimated cost of repairs: " + step.minRange + " - " + step.maxRange,
+                            text: "Estimated cost of repairs: $" + step.minRange + " - $" + step.maxRange,
                             pageBreak: 'after',
                             style:'p_header'
                         }

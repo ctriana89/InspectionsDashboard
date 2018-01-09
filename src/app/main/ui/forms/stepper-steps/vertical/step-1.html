@@ -3,10 +3,18 @@
         <md-input-container flex="100" flex-gt-xs="75">
             <input type="text" name="ownerName" ng-model="vm.verticalStepper.step1.ownerName"
                    placeholder="Owner Name" required >
+            <div ng-messages="verticalStep1.ownerName.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="25">
             <input type="number" name="yearsOld" ng-model="vm.verticalStepper.step1.yearsOld"
                    placeholder="Year of Construction" required min="1800" max="{{vm.currentYear}}">
+            <div ng-messages="verticalStep1.yearsOld.$error">
+                <div ng-message="required">This is required!</div>
+                <div ng-message="min">This is too old!</div>
+                <div ng-message="max">This is the future! :O</div>
+            </div>
         </md-input-container>
     </div>
     <div layout="column" layout-gt-xs="row" flex>
@@ -14,12 +22,8 @@
             <input type="text" name="ownerAddress" ng-model="vm.verticalStepper.step1.ownerAddress"
                    placeholder="Address"
                    required>
-            <div ng-messages="step1.ownerAddress.$error"
-                 ng-show="step1.ownerAddress.$touched"
-                 role="alert">
-                <div ng-message="required">
-                    <span>Firstname field is required.</span>
-                </div>
+            <div ng-messages="verticalStep1.ownerAddress.$error">
+                <div ng-message="required">This is required!</div>
             </div>
         </md-input-container>
     </div>
