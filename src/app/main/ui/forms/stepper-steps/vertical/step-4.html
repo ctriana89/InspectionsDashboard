@@ -2,119 +2,177 @@
     <div layout="column" layout-gt-xs="row" flex>
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Range/cooktop/ovens</label>
-            <md-select ng-model="vm.verticalStepper.step4.rangeCooktopOvens" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step4.rangeCooktopOvens"
+                       class="md-no-underline" required md-no-asterisk="false"
+                        name="rangeCooktopOvens">
                 <md-option ng-repeat="state in vm.selectOptions" ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep4.rangeCooktopOvens.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Range Exhaust Vent</label>
-            <md-select ng-model="vm.verticalStepper.step4.rangeExhaustVent" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step4.rangeExhaustVent"
+                       class="md-no-underline" required md-no-asterisk="false" name="rangeExhaustVent">
                 <md-option ng-repeat="state in vm.selectOptions" ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+
+            <div ng-messages="verticalStep4.rangeExhaustVent.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Refrigerator</label>
-            <md-select ng-model="vm.verticalStepper.step4.refrigerator" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step4.refrigerator"
+                       class="md-no-underline" required md-no-asterisk="false" name="refrigerator">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev"  >
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep4.refrigerator.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Freezer</label>
-            <md-select ng-model="vm.verticalStepper.step4.freezer" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step4.freezer"
+                       class="md-no-underline" required md-no-asterisk="false" name="freezer">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep4.freezer.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Icemaker</label>
-            <md-select ng-model="vm.verticalStepper.step4.icemaker" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step4.icemaker"
+                       class="md-no-underline" required md-no-asterisk="false" name="icemaker">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep4.icemaker.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
     </div>
     <div layout="column" layout-gt-xs="row" flex>
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Ice dispenser</label>
-            <md-select ng-model="vm.verticalStepper.step4.iceDispenser" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step4.iceDispenser"
+                       class="md-no-underline" required md-no-asterisk="false" name="iceDispenser">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep4.iceDispenser.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Chilled water</label>
-            <md-select ng-model="vm.verticalStepper.step4.chilledWater" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step4.chilledWater"
+                       class="md-no-underline" required md-no-asterisk="false" name="chilledWater">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep4.chilledWater.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Dishwasher</label>
-            <md-select ng-model="vm.verticalStepper.step4.dishwasher" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step4.dishwasher"
+                       class="md-no-underline" required md-no-asterisk="false" name="dishwasher">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep4.dishwasher.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Microwave Oven</label>
-            <md-select ng-model="vm.verticalStepper.step4.microwaveOven" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step4.microwaveOven"
+                       class="md-no-underline" required md-no-asterisk="false" name="microwaveOven">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep4.microwaveOven.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Garbage disposal</label>
-            <md-select ng-model="vm.verticalStepper.step4.garbageDisposal" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step4.garbageDisposal"
+                       class="md-no-underline" required md-no-asterisk="false" name="garbageDisposal">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep4.garbageDisposal.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
     </div>
     <div layout="column" layout-gt-xs="row" flex>
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Trash Compactor</label>
-            <md-select ng-model="vm.verticalStepper.step4.trashCompactor" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step4.trashCompactor"
+                       class="md-no-underline" required md-no-asterisk="false" name="trashCompactor">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep4.trashCompactor.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Mechanical Exhaust Vents and Heaters</label>
-            <md-select ng-model="vm.verticalStepper.step4.mechanicalExhaustVents" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step4.mechanicalExhaustVents"
+                       class="md-no-underline" required md-no-asterisk="false" name="mechanicalExhaustVents">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep4.mechanicalExhaustVents.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Washer</label>
-            <md-select ng-model="vm.verticalStepper.step4.washer" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step4.washer"
+                       class="md-no-underline" required md-no-asterisk="false" name="washer">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep4.washer.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Dryer</label>
-            <md-select ng-model="vm.verticalStepper.step4.dryer" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step4.dryer"
+                       class="md-no-underline" required md-no-asterisk="false" name="dryer">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep4.dryer.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
     </div>
 

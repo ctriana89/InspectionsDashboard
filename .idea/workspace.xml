@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23a7d8c8-de15-42b6-bbc7-fc263c90124d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/partials/templateCacheHtml.js" afterPath="$PROJECT_DIR$/.tmp/partials/templateCacheHtml.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/serve/app/index.css" afterPath="$PROJECT_DIR$/.tmp/serve/app/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/serve/index.html" afterPath="$PROJECT_DIR$/.tmp/serve/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ui/forms/forms.controller.js" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/forms.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/price-range/price-range.html" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/price-range/price-range.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-1.html" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-2.html" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-3.html" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-5.html" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-5.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-4.html" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-4.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -88,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="step-3.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="step-3.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="174" column="25" lean-forward="false" selection-start-line="174" selection-start-column="25" selection-end-line="174" selection-end-column="25" />
+            <state relative-caret-position="315">
+              <caret line="146" column="12" lean-forward="true" selection-start-line="144" selection-start-column="6" selection-end-line="146" selection-end-column="12" />
               <folding>
                 <element signature="n#md-input-container#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#md-input-container#1;n#div#0;n#div#0;n#!!top" expanded="false" />
@@ -107,8 +98,35 @@
                 <element signature="n#md-select#0;n#md-input-container#3;n#div#1;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#md-input-container#4;n#div#1;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#md-select#0;n#md-input-container#4;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#md-input-container#0;n#div#2;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#md-select#0;n#md-input-container#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-input-container#1;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-input-container#2;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-input-container#3;n#div#2;n#div#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="step-4.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-4.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="164" column="54" lean-forward="false" selection-start-line="164" selection-start-column="54" selection-end-line="164" selection-end-column="54" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-input-container#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-input-container#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-select#0;n#md-input-container#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-input-container#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-input-container#3;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-input-container#4;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-input-container#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-input-container#1;n#div#1;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-input-container#2;n#div#1;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-input-container#3;n#div#1;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-input-container#4;n#div#1;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#md-input-container#0;n#div#2;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#md-input-container#1;n#div#2;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#md-input-container#2;n#div#2;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#md-input-container#3;n#div#2;n#div#0;n#!!top" expanded="false" />
@@ -158,18 +176,6 @@
               <caret line="82" column="50" lean-forward="false" selection-start-line="82" selection-start-column="50" selection-end-line="82" selection-end-column="103" />
               <folding>
                 <element signature="n#md-input-container#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="step-7.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-7.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1515">
-              <caret line="116" column="78" lean-forward="false" selection-start-line="116" selection-start-column="77" selection-end-line="116" selection-end-column="78" />
-              <folding>
-                <element signature="n#md-input-container#3;n#div#0;n#div#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -293,7 +299,6 @@
         <option value="$PROJECT_DIR$/dist/app/main/ui/forms/forms.controller.js" />
         <option value="$PROJECT_DIR$/dist/styles/app.css" />
         <option value="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/deficiencies/deficiencies.html" />
-        <option value="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-4.html" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/deficiencies/deficiencies.directive.js" />
         <option value="$PROJECT_DIR$/src/app/index.module.js" />
@@ -310,6 +315,7 @@
         <option value="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-2.html" />
         <option value="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/price-range/price-range.html" />
         <option value="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-3.html" />
+        <option value="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-4.html" />
       </list>
     </option>
   </component>
@@ -914,12 +920,12 @@
       <workItem from="1514579800456" duration="20179000" />
       <workItem from="1515338355660" duration="3602000" />
       <workItem from="1515421375675" duration="2210000" />
-      <workItem from="1515459309132" duration="4729000" />
+      <workItem from="1515459309132" duration="6756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181272000" />
+    <option name="totallyTimeSpent" value="183299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1177,24 +1183,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="111" column="23" lean-forward="false" selection-start-line="111" selection-start-column="23" selection-end-line="111" selection-end-column="23" />
-          <folding>
-            <element signature="n#md-input-container#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#md-input-container#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#md-input-container#3;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#md-input-container#4;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#md-input-container#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#md-input-container#1;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#md-input-container#2;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#md-input-container#3;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#md-input-container#1;n#div#2;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/deficiencies/deficiencies.directive.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -1304,8 +1292,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="174" column="25" lean-forward="false" selection-start-line="174" selection-start-column="25" selection-end-line="174" selection-end-column="25" />
+        <state relative-caret-position="315">
+          <caret line="146" column="12" lean-forward="true" selection-start-line="144" selection-start-column="6" selection-end-line="146" selection-end-column="12" />
           <folding>
             <element signature="n#md-input-container#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#md-input-container#1;n#div#0;n#div#0;n#!!top" expanded="false" />
@@ -1320,8 +1308,33 @@
             <element signature="n#md-select#0;n#md-input-container#3;n#div#1;n#div#0;n#!!top" expanded="false" />
             <element signature="n#md-input-container#4;n#div#1;n#div#0;n#!!top" expanded="false" />
             <element signature="n#md-select#0;n#md-input-container#4;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#md-input-container#0;n#div#2;n#div#0;n#!!top" expanded="false" />
             <element signature="n#md-select#0;n#md-input-container#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-input-container#1;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-input-container#2;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-input-container#3;n#div#2;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="164" column="54" lean-forward="false" selection-start-line="164" selection-start-column="54" selection-end-line="164" selection-end-column="54" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-input-container#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-input-container#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-select#0;n#md-input-container#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-input-container#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-input-container#3;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-input-container#4;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-input-container#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-input-container#1;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-input-container#2;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-input-container#3;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-input-container#4;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#md-input-container#0;n#div#2;n#div#0;n#!!top" expanded="false" />
             <element signature="n#md-input-container#1;n#div#2;n#div#0;n#!!top" expanded="false" />
             <element signature="n#md-input-container#2;n#div#2;n#div#0;n#!!top" expanded="false" />
             <element signature="n#md-input-container#3;n#div#2;n#div#0;n#!!top" expanded="false" />
