@@ -7,14 +7,23 @@
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
             <input type="text" name="location" ng-model="vm.verticalStepper.step5.CElocation"
                    placeholder="Location" required>
+            <div ng-messages="verticalStep5.location.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
             <input type="text" name="manufacturer" ng-model="vm.verticalStepper.step5.CEmanufacturer"
                    placeholder="Manufacturer" required>
+            <div ng-messages="verticalStep5.manufacturer.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
             <input type="number" name="year" ng-model="vm.verticalStepper.step5.CEyear"
                    placeholder="Year" required  min="{{vm.currentYear-50}}" max="{{vm.currentYear}}">
+            <div ng-messages="verticalStep5.year.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="50">
             <md-switch md-no-ink ng-model="vm.verticalStepper.step5.CEtemperatureAcceptable" aria-label="No Ink Effects">
@@ -24,68 +33,91 @@
     </div>
     <div layout="column" layout-gt-xs="row" flex>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
-            <input type="number" name="temperatureReturn" ng-model="vm.verticalStepper.step5.CEtemperatureReturn"
+            <input type="number" name="CEtemperatureReturn" ng-model="vm.verticalStepper.step5.CEtemperatureReturn"
                        placeholder="Return" required>
             <md-icon md-font-icon="icon-temperature-fahrenheit" class="s22"></md-icon>
+            <div ng-messages="verticalStep5.CEtemperatureReturn.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
-            <input type="number" name="temperatureRegister" ng-model="vm.verticalStepper.step5.CEtemperatureRegister"
+            <input type="number" name="CEtemperatureRegister" ng-model="vm.verticalStepper.step5.CEtemperatureRegister"
                        placeholder="Register" required>
             <md-icon md-font-icon="icon-temperature-fahrenheit" class="s22"></md-icon>
+            <div ng-messages="verticalStep5.CEtemperatureRegister.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
-
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
             <label>Type of System</label>
-            <md-select ng-model="vm.verticalStepper.step5.CEtypeOfSystem" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step5.CEtypeOfSystem" class="md-no-underline"
+                       required md-no-asterisk="false" name="CEtypeOfSystem">
                 <md-option ng-repeat="state in vm.typeOfSystemOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep5.CEtypeOfSystem.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
             <label>Energy Source</label>
-            <md-select ng-model="vm.verticalStepper.step5.CEenergySource" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step5.CEenergySource" class="md-no-underline"
+                       required md-no-asterisk="false" name="CEenergySource">
                 <md-option ng-repeat="state in vm.typeOfSourceOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep5.CEenergySource.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
     </div>
     <div layout="column" layout-gt-xs="row" flex>
         Heating
         <md-divider></md-divider>
     </div>
-
     <div layout="column" layout-gt-xs="row" flex>
-
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
-            <input type="number" name="temperatureReturn" ng-model="vm.verticalStepper.step5.HtemperatureReturn"
+            <input type="number" name="HtemperatureReturn" ng-model="vm.verticalStepper.step5.HtemperatureReturn"
                    placeholder="Return" required>
-
             <md-icon md-font-icon="icon-temperature-fahrenheit" class="s22"></md-icon>
+            <div ng-messages="verticalStep5.HtemperatureReturn.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
-            <input type="number" name="temperatureRegister" ng-model="vm.verticalStepper.step5.HtemperatureRegister"
+            <input type="number" name="HtemperatureRegister" ng-model="vm.verticalStepper.step5.HtemperatureRegister"
                    placeholder="Register" required>
             <md-icon md-font-icon="icon-temperature-fahrenheit" class="s22"></md-icon>
+            <div ng-messages="verticalStep5.HtemperatureRegister.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
             <label>Type of System</label>
-            <md-select ng-model="vm.verticalStepper.step5.HtypeOfSystem" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step5.HtypeOfSystem"
+                       class="md-no-underline" required md-no-asterisk="false" name="HtypeOfSystem">
                 <md-option ng-repeat="state in vm.typeOfSystemOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep5.HtypeOfSystem.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
             <label>Energy Source</label>
-            <md-select ng-model="vm.verticalStepper.step5.HenergySource" class="md-no-underline" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step5.HenergySource"
+                       class="md-no-underline" required md-no-asterisk="false" name="HenergySource">
                 <md-option ng-repeat="state in vm.typeOfSourceOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
             </md-select>
+            <div ng-messages="verticalStep5.HenergySource.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
     </div>
 </div>
-
 <deficiencies step="vm.verticalStepper.step5" step-number="'5'" pictures-array="vm.multiplesFiles"></deficiencies>
