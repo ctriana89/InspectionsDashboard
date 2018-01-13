@@ -161,11 +161,14 @@
     </md-input-container>
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Garage door operator(s)</label>
-      <md-select ng-model="vm.verticalStepper.step3.garageDoorOperator" class="md-no-underline" required md-no-asterisk="false">
+      <md-select ng-model="vm.verticalStepper.step3.garageDoorOperator" class="md-no-underline" required md-no-asterisk="false" name="garageDoorOperator">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
           {{state.abbrev}}
         </md-option>
       </md-select>
+      <div ng-messages="verticalStep3.garageDoorOperator.$error">
+        <div ng-message="required">This is required!</div>
+      </div>
     <!--</md-input-container>-->
     <!--<md-input-container flex="100" flex-gt-xs="20" >-->
       <md-radio-group ng-model="vm.verticalStepper.step3.garageDoorOperatorModel" ng-show="vm.verticalStepper.step3.garageDoorOperator!=='None' && vm.verticalStepper.step3.garageDoorOperator!==undefined">

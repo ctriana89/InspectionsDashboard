@@ -23,6 +23,9 @@
                    placeholder="Year" required  min="{{vm.currentYear-50}}" max="{{vm.currentYear}}">
             <div ng-messages="verticalStep5.year.$error">
                 <div ng-message="required">This is required!</div>
+                <div ng-message="min">This is too old!</div>
+                <div ng-message="max">This is the future! :O</div>
+                <div ng-message="number">Just numbers here please</div>
             </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="50">
@@ -38,6 +41,7 @@
             <md-icon md-font-icon="icon-temperature-fahrenheit" class="s22"></md-icon>
             <div ng-messages="verticalStep5.CEtemperatureReturn.$error">
                 <div ng-message="required">This is required!</div>
+                <div ng-message="number">Just numbers here please</div>
             </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
@@ -84,6 +88,7 @@
             <md-icon md-font-icon="icon-temperature-fahrenheit" class="s22"></md-icon>
             <div ng-messages="verticalStep5.HtemperatureReturn.$error">
                 <div ng-message="required">This is required!</div>
+                <div ng-message="number">Just numbers here please</div>
             </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">
@@ -92,6 +97,7 @@
             <md-icon md-font-icon="icon-temperature-fahrenheit" class="s22"></md-icon>
             <div ng-messages="verticalStep5.HtemperatureRegister.$error">
                 <div ng-message="required">This is required!</div>
+                <div ng-message="number">Just numbers here please</div>
             </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="20"  flex-offset-lg="5" flex-offset-xl="5">

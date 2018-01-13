@@ -11,24 +11,18 @@
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="50">
             <p>Weather Conditions:</p>
-            <div flex-gt-sm="50" ng-repeat="element in vm.verticalStepper.step2.weatherCondition">
-                <md-checkbox ng-model="element.value" aria-label="element.name" name="weatherCondition" required>
+            <div flex-gt-sm="50" ng-repeat="element in vm.verticalStepper.step2.weatherCondition"  >
+                <md-checkbox ng-model="element.value" aria-label="element.name" >
                     {{ element.name}}
                 </md-checkbox>
-            </div>
-            <div ng-messages="verticalStep2.weatherCondition.$error">
-                <div ng-message="required">This is required!</div>
             </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="50">
             <p>Present at the inspection:</p>
             <div flex-gt-sm="50" ng-repeat="element in vm.verticalStepper.step2.presentAtInspection">
-                <md-checkbox ng-model="element.value" aria-label="element.name" required name="presentAtInspection">
+                <md-checkbox ng-model="element.value" aria-label="element.name"  name="presentAtInspection">
                     {{ element.name}}
                 </md-checkbox>
-                <div ng-messages="verticalStep2.presentAtInspection.$error">
-                    <div ng-message="required">This is required!</div>
-                </div>
             </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="50">

@@ -7,7 +7,7 @@
     <div layout="column" layout-gt-xs="row" flex ng-show="vm.verticalStepper.step8.pool">
         <md-input-container flex="100" flex-gt-xs="80"  flex-offset-lg="8" flex-offset-xl="8">
             <p>Pool contain:</p>
-            <div  ng-repeat="element in vm.poolContainsOptions" >
+            <div ng-repeat="element in vm.poolContainsOptions" >
                 <md-checkbox aria-label="element" ng-checked="vm.exists(element, vm.verticalStepper.step8.contains)" ng-click="vm.toggle(element, vm.verticalStepper.step8.contains)">
                     {{ element}}
                 </md-checkbox>
@@ -15,7 +15,7 @@
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="80"  flex-offset-lg="8" flex-offset-xl="8">
             <p>Water Level</p>
-            <md-radio-group ng-model="vm.verticalStepper.step8.poolWaterLevel" class="md-primary">
+            <md-radio-group ng-model="vm.verticalStepper.step8.poolWaterLevel" class="md-primary" required>
                 <md-radio-button class="md-primary"
                                  ng-repeat="element in vm.poolWaterLevelOptions"
                                  ng-value="element">{{element}}<br/>
@@ -63,8 +63,11 @@
             </div>
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="25">
-            <input type="number" name="numberOfZones" ng-model="vm.verticalStepper.step8.numberOfZones"
+            <input type="number" name="numberOfZones" ng-model="vm.verticalStepper.step8.numberOfZones" ng-required="vm.verticalStepper.step8.sprinkler"
                    placeholder="Number Of Zones" >
+            <div ng-messages="verticalStep8.numberOfZones.$error">
+                <div ng-message="required">This is required!</div>
+            </div>
         </md-input-container>
     </div>
 </div>

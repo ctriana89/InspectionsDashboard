@@ -71,6 +71,8 @@
                 eveEdge:[]
             }
         };
+
+        setDefaults(vm);
         vm.selectOptions = ('Satisfactory,Not Applicable,None,See below')
             .split(',').map(function (state) {
                 return {abbrev: state};
@@ -1233,6 +1235,9 @@
                 }
             });
             return currentAge-expectedLife;
+        }
+        function setDefaults(vm) {
+            vm.verticalStepper.step8.poolWaterLevel='Normal';
         }
         /**
          * Send form
