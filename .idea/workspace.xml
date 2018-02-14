@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23a7d8c8-de15-42b6-bbc7-fc263c90124d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-11.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/serve/app/index.css" afterPath="$PROJECT_DIR$/.tmp/serve/app/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/serve/index.html" afterPath="$PROJECT_DIR$/.tmp/serve/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/index.config.js" afterPath="$PROJECT_DIR$/src/app/index.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/index.module.js" afterPath="$PROJECT_DIR$/src/app/index.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ui/forms/forms.controller.js" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/forms.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ui/forms/forms.scss" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/forms.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/deficiencies/deficiencies.directive.js" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/deficiencies/deficiencies.directive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-3.html" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-4.html" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-4.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-7.html" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-7.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-8.html" afterPath="$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-8.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -144,8 +130,8 @@
       <file leaf-file-name="step-7.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-7.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="52" column="24" lean-forward="true" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+            <state relative-caret-position="277">
+              <caret line="57" column="8" lean-forward="false" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
               <folding>
                 <element signature="n#md-input-container#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#md-input-container#1;n#div#0;n#div#0;n#!!top" expanded="false" />
@@ -933,12 +919,12 @@
       <workItem from="1515775857391" duration="7167000" />
       <workItem from="1515804536873" duration="15572000" />
       <workItem from="1516034566848" duration="5748000" />
-      <workItem from="1518573392387" duration="4829000" />
+      <workItem from="1518573392387" duration="5280000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218567000" />
+    <option name="totallyTimeSpent" value="219018000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -960,7 +946,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825205" sideWeight="0.49815693" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1840796" sideWeight="0.48077935" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1840796" sideWeight="0.48077935" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40650406" sideWeight="0.49541932" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1411,8 +1397,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/ui/forms/stepper-steps/vertical/step-7.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="52" column="24" lean-forward="true" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+        <state relative-caret-position="277">
+          <caret line="57" column="8" lean-forward="false" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
           <folding>
             <element signature="n#md-input-container#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#md-input-container#1;n#div#0;n#div#0;n#!!top" expanded="false" />
