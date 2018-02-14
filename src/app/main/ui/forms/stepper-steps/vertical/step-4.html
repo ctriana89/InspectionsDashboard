@@ -4,6 +4,7 @@
             <label>Range/cooktop/ovens</label>
             <md-select ng-model="vm.verticalStepper.step4.rangeCooktopOvens"
                        class="md-no-underline" required md-no-asterisk="false"
+                       ng-init="vm.verticalStepper.step4.rangeCooktopOvens='Not Applicable'"
                         name="rangeCooktopOvens">
                 <md-option ng-repeat="state in vm.selectOptions" ng-value="state.abbrev">
                     {{state.abbrev}}
@@ -16,7 +17,8 @@
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Range Exhaust Vent</label>
             <md-select ng-model="vm.verticalStepper.step4.rangeExhaustVent"
-                       class="md-no-underline" required md-no-asterisk="false" name="rangeExhaustVent">
+                       class="md-no-underline" required md-no-asterisk="false" name="rangeExhaustVent"
+                       ng-init="vm.verticalStepper.step4.rangeExhaustVent='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions" ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
@@ -29,7 +31,8 @@
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Refrigerator</label>
             <md-select ng-model="vm.verticalStepper.step4.refrigerator"
-                       class="md-no-underline" required md-no-asterisk="false" name="refrigerator">
+                       class="md-no-underline" required md-no-asterisk="false" name="refrigerator"
+                       ng-init="vm.verticalStepper.step4.refrigerator='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev"  >
                     {{state.abbrev}}
                 </md-option>
@@ -41,7 +44,8 @@
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Freezer</label>
             <md-select ng-model="vm.verticalStepper.step4.freezer"
-                       class="md-no-underline" required md-no-asterisk="false" name="freezer">
+                       class="md-no-underline" required md-no-asterisk="false" name="freezer"
+                       ng-init="vm.verticalStepper.step4.freezer='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
@@ -53,7 +57,8 @@
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Icemaker</label>
             <md-select ng-model="vm.verticalStepper.step4.icemaker"
-                       class="md-no-underline" required md-no-asterisk="false" name="icemaker">
+                       class="md-no-underline" required md-no-asterisk="false" name="icemaker"
+                       ng-init="vm.verticalStepper.step4.icemaker='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
@@ -67,7 +72,8 @@
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Ice dispenser</label>
             <md-select ng-model="vm.verticalStepper.step4.iceDispenser"
-                       class="md-no-underline" required md-no-asterisk="false" name="iceDispenser">
+                       class="md-no-underline" required md-no-asterisk="false" name="iceDispenser"
+                       ng-init="vm.verticalStepper.step4.iceDispenser='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
                     {{state.abbrev}}
                 </md-option>
@@ -79,7 +85,8 @@
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Chilled water</label>
             <md-select ng-model="vm.verticalStepper.step4.chilledWater"
-                       class="md-no-underline" required md-no-asterisk="false" name="chilledWater">
+                       class="md-no-underline" required md-no-asterisk="false" name="chilledWater"
+                       ng-init="vm.verticalStepper.step4.chilledWater='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
                     {{state.abbrev}}
                 </md-option>
@@ -91,7 +98,8 @@
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Dishwasher</label>
             <md-select ng-model="vm.verticalStepper.step4.dishwasher"
-                       class="md-no-underline" required md-no-asterisk="false" name="dishwasher">
+                       class="md-no-underline" required md-no-asterisk="false" name="dishwasher"
+                       ng-init="vm.verticalStepper.step4.dishwasher='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
@@ -103,7 +111,8 @@
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Microwave Oven</label>
             <md-select ng-model="vm.verticalStepper.step4.microwaveOven"
-                       class="md-no-underline" required md-no-asterisk="false" name="microwaveOven">
+                       class="md-no-underline" required md-no-asterisk="false" name="microwaveOven"
+                       ng-init="vm.verticalStepper.step4.microwaveOven='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
@@ -115,7 +124,8 @@
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Garbage disposal</label>
             <md-select ng-model="vm.verticalStepper.step4.garbageDisposal"
-                       class="md-no-underline" required md-no-asterisk="false" name="garbageDisposal">
+                       class="md-no-underline" required md-no-asterisk="false" name="garbageDisposal"
+                       ng-init="vm.verticalStepper.step4.garbageDisposal='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
@@ -129,7 +139,8 @@
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Trash Compactor</label>
             <md-select ng-model="vm.verticalStepper.step4.trashCompactor"
-                       class="md-no-underline" required md-no-asterisk="false" name="trashCompactor">
+                       class="md-no-underline" required md-no-asterisk="false" name="trashCompactor"
+                       ng-init="vm.verticalStepper.step4.trashCompactor='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
@@ -141,7 +152,8 @@
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Mechanical Exhaust Vents and Heaters</label>
             <md-select ng-model="vm.verticalStepper.step4.mechanicalExhaustVents"
-                       class="md-no-underline" required md-no-asterisk="false" name="mechanicalExhaustVents">
+                       class="md-no-underline" required md-no-asterisk="false" name="mechanicalExhaustVents"
+                       ng-init="vm.verticalStepper.step4.mechanicalExhaustVents='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
@@ -153,7 +165,8 @@
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Washer</label>
             <md-select ng-model="vm.verticalStepper.step4.washer"
-                       class="md-no-underline" required md-no-asterisk="false" name="washer">
+                       class="md-no-underline" required md-no-asterisk="false" name="washer"
+                       ng-init="vm.verticalStepper.step4.washer='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
@@ -165,7 +178,8 @@
         <md-input-container flex="100" flex-gt-xs="20">
             <label>Dryer</label>
             <md-select ng-model="vm.verticalStepper.step4.dryer"
-                       class="md-no-underline" required md-no-asterisk="false" name="dryer">
+                       class="md-no-underline" required md-no-asterisk="false" name="dryer"
+                       ng-init="vm.verticalStepper.step4.dryer='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>

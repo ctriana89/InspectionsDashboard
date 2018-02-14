@@ -35,7 +35,6 @@
         </md-input-container>
     </div>
     <div layout="column" layout-gt-xs="row" flex>
-
         <md-input-container flex="100" flex-gt-xs="25">
             <input type="text" name="typeOfWiring" ng-model="vm.verticalStepper.step7.typeOfWiring"
                        placeholder="Type of wiring" required>
@@ -45,7 +44,9 @@
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="25">
             <label>Circuit breakers</label>
-            <md-select ng-model="vm.verticalStepper.step7.circuitBreakers" class="md-no-underline" name="circuitBreakers" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step7.circuitBreakers" class="md-no-underline"
+                       name="circuitBreakers" required md-no-asterisk="false"
+                       ng-init="vm.verticalStepper.step4.circuitBreakers='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
@@ -56,7 +57,9 @@
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="25">
         <label>GFI breakers</label>
-        <md-select ng-model="vm.verticalStepper.step7.GFIBreakers" class="md-no-underline" name="GFIBreakers"  required md-no-asterisk="false">
+        <md-select ng-model="vm.verticalStepper.step7.GFIBreakers"
+                   class="md-no-underline" name="GFIBreakers"  required md-no-asterisk="false"
+                   ng-init="vm.verticalStepper.step4.GFIBreakers='Not Applicable'">
             <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                 {{state.abbrev}}
             </md-option>
@@ -67,7 +70,9 @@
         </md-input-container>
         <md-input-container flex="100" flex-gt-xs="25">
             <label>Smoke alarm</label>
-            <md-select ng-model="vm.verticalStepper.step7.smokeAlarm" class="md-no-underline" name="smokeAlarm" required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step7.smokeAlarm"
+                       class="md-no-underline" name="smokeAlarm" required md-no-asterisk="false"
+                       ng-init="vm.verticalStepper.step4.smokeAlarm='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>
@@ -80,7 +85,9 @@
     <div layout="column" layout-gt-xs="row" flex>
         <md-input-container flex="100" flex-gt-xs="25">
             <label>Ceiling fan/s</label>
-            <md-select ng-model="vm.verticalStepper.step7.ceilingFans" class="md-no-underline" name="ceilingFans"  required md-no-asterisk="false">
+            <md-select ng-model="vm.verticalStepper.step7.ceilingFans"
+                       class="md-no-underline" name="ceilingFans"  required md-no-asterisk="false"
+                       ng-init="vm.verticalStepper.step4.ceilingFans='Not Applicable'">
                 <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
                     {{state.abbrev}}
                 </md-option>

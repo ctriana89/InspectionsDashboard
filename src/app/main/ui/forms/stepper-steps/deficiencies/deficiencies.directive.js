@@ -26,13 +26,20 @@ angular.module('fuse')
                 function uploadDocuments(files, step) {
                     if (files && files.length) {
                         for (var i = 0; i < files.length; i++) {
-                            Upload.base64DataUrl(files[i]).then(
-                                function (url) {
-                                    if(vm.picturesArray[step]==undefined){
-                                        vm.picturesArray[step]=[];
-                                    }
-                                    vm.picturesArray[step].push(url);
-                                });
+                            console.log(files[i]);
+                            Upload.resize(files[i], 100, 100, 0.5).then(
+                                function (resizedFile) {
+                                    console.log(resizedFile);
+                                    Upload.base64DataUrl(resizedFile).then(
+                                        function (url) {
+                                            if (vm.picturesArray[step] == undefined) {
+                                                vm.picturesArray[step] = [];
+                                            }
+                                            vm.picturesArray[step].push(url);
+
+                                        })
+                                }
+                            )
                         }
                     }
                 }

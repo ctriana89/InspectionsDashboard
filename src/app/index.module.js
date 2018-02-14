@@ -16,6 +16,8 @@
             'ng.deviceDetector',
             'ngMdIcons',
             'signature',
+            'angularPayments',
+            'stripe',
 
 
             // Core

@@ -32,7 +32,6 @@
           </md-input-container>
     </div>
     <div layout="column" layout-gt-xs="row" flex>
-
         <md-switch md-no-ink ng-model="vm.verticalStepper.step8.sprinkler" aria-label="No Ink Effects">
             Does this house have sprinklers?
         </md-switch>
@@ -72,4 +71,5 @@
     </div>
 </div>
 
-<deficiencies ng-show="vm.verticalStepper.step8.sprinkler || vm.verticalStepper.step8.pool" step="vm.verticalStepper.step8" step-number="'8'" pictures-array="vm.multiplesFiles"></deficiencies>
+<deficiencies ng-show="vm.verticalStepper.step8.sprinkler || vm.verticalStepper.step8.pool"
+              step="vm.verticalStepper.step8" step-number="'8'" pictures-array="vm.multiplesFiles"></deficiencies>

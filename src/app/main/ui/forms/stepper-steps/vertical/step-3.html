@@ -51,6 +51,7 @@
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Doors (Interior & Exterior)</label>
       <md-select ng-model="vm.verticalStepper.step3.doors"
+                 ng-init="vm.verticalStepper.step3.doors='Not Applicable'"
                  class="md-no-underline"
                  required
                  md-no-asterisk="false"
@@ -69,6 +70,7 @@
       <label>Sliding doors</label>
       <md-select ng-model="vm.verticalStepper.step3.slidingDoors"
                  class="md-no-underline"
+                 ng-init="vm.verticalStepper.step3.slidingDoors='Not Applicable'"
                  required
                  md-no-asterisk="false"
                 name="slidingDoors">
@@ -85,6 +87,7 @@
       <md-select ng-model="vm.verticalStepper.step3.windows"
                  class="md-no-underline"
                  required md-no-asterisk="false"
+                 ng-init="vm.verticalStepper.step3.windows='Not Applicable'"
       name="windows">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
           {{state.abbrev}}
@@ -96,8 +99,11 @@
     </md-input-container>
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Walls</label>
-      <md-select ng-model="vm.verticalStepper.step3.walls" class="md-no-underline"
-                 required md-no-asterisk="false" name="walls">
+      <md-select ng-model="vm.verticalStepper.step3.walls"
+                 class="md-no-underline"
+                 required md-no-asterisk="false"
+                 name="walls"
+                 ng-init="vm.verticalStepper.step3.walls='Not Applicable'">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev"  >
           {{state.abbrev}}
         </md-option>
@@ -108,8 +114,11 @@
     </md-input-container>
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Floors</label>
-      <md-select ng-model="vm.verticalStepper.step3.floors" class="md-no-underline"
-                 required md-no-asterisk="false" name="floors">
+      <md-select ng-model="vm.verticalStepper.step3.floors"
+                 class="md-no-underline"
+                 required md-no-asterisk="false"
+                 name="floors"
+                 ng-init="vm.verticalStepper.step3.floors='Not Applicable'">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
           {{state.abbrev}}
         </md-option>
@@ -121,8 +130,11 @@
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Stairways</label>
       <md-select ng-model="vm.verticalStepper.step3.stairways"
-                 class="md-no-underline" required
-                 md-no-asterisk="false" name="stairways">
+                 class="md-no-underline"
+                 required
+                 md-no-asterisk="false"
+                 ng-init="vm.verticalStepper.step3.stairways='Not Applicable'"
+                 name="stairways">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
           {{state.abbrev}}
         </md-option>
@@ -136,8 +148,11 @@
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Porches, balconies, Patio</label>
       <md-select ng-model="vm.verticalStepper.step3.porchesBalconiesPatio"
-                 class="md-no-underline" required
-                 name="porchesBalconiesPatio" md-no-asterisk="false">
+                 class="md-no-underline"
+                 required
+                 name="porchesBalconiesPatio"
+                 ng-init="vm.verticalStepper.step3.porchesBalconiesPatio='Not Applicable'"
+                 md-no-asterisk="false">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
           {{state.abbrev}}
         </md-option>
@@ -149,8 +164,11 @@
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Decks, and carports</label>
       <md-select ng-model="vm.verticalStepper.step3.decksCarports"
-                 class="md-no-underline" required md-no-asterisk="false"
-      name="decksCarports">
+                 class="md-no-underline"
+                 required
+                 md-no-asterisk="false"
+                 ng-init="vm.verticalStepper.step3.decksCarports='Not Applicable'"
+                 name="decksCarports">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
           {{state.abbrev}}
         </md-option>
@@ -161,7 +179,11 @@
     </md-input-container>
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Garage door operator(s)</label>
-      <md-select ng-model="vm.verticalStepper.step3.garageDoorOperator" class="md-no-underline" required md-no-asterisk="false" name="garageDoorOperator">
+      <md-select ng-model="vm.verticalStepper.step3.garageDoorOperator"
+                 class="md-no-underline"
+                 required md-no-asterisk="false"
+                 name="garageDoorOperator"
+                 ng-init="vm.verticalStepper.step3.garageDoorOperator='Not Applicable'">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev">
           {{state.abbrev}}
         </md-option>
@@ -179,8 +201,11 @@
     <md-input-container flex="100" flex-gt-xs="20">
       <label>Fireplace/chimney</label>
       <md-select ng-model="vm.verticalStepper.step3.fireplaceChimney"
-                 class="md-no-underline" required md-no-asterisk="false"
-      name="fireplaceChimney">
+                 class="md-no-underline"
+                 required
+                 md-no-asterisk="false"
+                 ng-init="vm.verticalStepper.step3.fireplaceChimney='Not Applicable'"
+                 name="fireplaceChimney">
         <md-option ng-repeat="state in vm.selectOptions"  ng-value="state.abbrev" >
           {{state.abbrev}}
         </md-option>

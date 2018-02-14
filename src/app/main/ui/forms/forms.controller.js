@@ -6,9 +6,19 @@
         .controller('FormsController', FormsController);
 
     /** @ngInject */
-    FormsController.$inject = ['Upload', '$timeout', 'deviceDetector'];
-    function FormsController(Upload, $timeout, deviceDetector) {
+    FormsController.$inject = ['Upload', '$timeout', 'deviceDetector','$scope'];
+    function FormsController(Upload, $timeout, deviceDetector, $scope) {
         var vm = this;
+
+
+        $scope.stripeCallback = function (code, result) {
+            if (result.error) {
+                window.alert('it failed! error: ' + result.error.message);
+            } else {
+                window.alert('success! token: ' + result.id);
+            }
+        };
+
         // Data
         vm.horizontalStepper = {
             step1: {},
@@ -77,6 +87,7 @@
             .split(',').map(function (state) {
                 return {abbrev: state};
             });
+        vm.default='Not Applicable';
         vm.typeOfSystemOptions = ('Central,Split or package or wall').split(',').map(function (state) {
                 return {abbrev: state};
             });
@@ -191,10 +202,15 @@
         }
 
         function uploadDocument(file) {
-            Upload.base64DataUrl(file).then(
-                function (url) {
-                    vm.verticalStepper.step1.frontSideHouse1 = url;
-                });
+            console.log(file);
+            Upload.resize(file, 100, 100, 0.5).then(
+                function (resizedFile) {
+                    console.log(resizedFile);
+                    Upload.base64DataUrl(resizedFile).then(
+                        function (url) {
+                            vm.verticalStepper.step1.frontSideHouse1 = url;
+                        });
+                })
         }
 
         function uploadDocumentOneByOne(file, step) {
@@ -290,16 +306,39 @@
             // You can do an API call here to send the form to your server
             //var docDefinition = { content: 'This is an sample PDF printed with pdfMake' };
             var docDefinition = {
-                header: {text: 'ALL FLORIDA INSPECTIONS & EXTERMINATING, INC.', style: 'header'},
-                footer: function (page, pages) {
-                    return page + ' of ' + pages;
+                header: function(page) {
+                    if (page != 1)
+                        return {text: ''}
+                    else {
+                        return {
+                            alignment: 'center',
+                            text: 'ALL FLORIDA INSPECTIONS & EXTERMINATING, INC.',
+                            style: 'pageHeader'
+                        }
+                    }
+                },
+                footer: function(page, pages) {
+                    return {
+                        columns: [
+                            {
+                                alignment: 'center',
+                                text: [
+                                    {text: page.toString(), italics: true},
+                                    {text: ' of ', italics: true},
+                                    {text: pages.toString(), italics: true}
+                                ]
+                            }
+                        ],
+                        margin: [10, 0]
+                    };
                 },
                 content: [
                     {text: 'COMPREHENSIVE INSPECTION REPORT', style: 'header'},
                     {text: 'Requested by: ' + vm.verticalStepper.step1.ownerName, style: 'header'},
                     {
                         image: vm.verticalStepper.step1.frontSideHouse1,
-                        fit: [550, 550]
+                        // fit: [550, 550]
+                        width: 550
                     },
                     {text: vm.verticalStepper.step1.ownerAddress, style: 'anotherStyle'},
                     {
@@ -313,14 +352,14 @@
                         }
                     },
 
-                    {text: 'PROPERTY ADDRESS: ' + vm.verticalStepper.step1.ownerAddress, style: ['anotherStyle','margin_top']},
-                    {text: 'DATE OF INSPECTION: ' + vm.verticalStepper.step2.dateOfInspection, style: 'anotherStyle'},
+                    {text: 'PROPERTY ADDRESS: ' + vm.verticalStepper.step1.ownerAddress, style: ['anotherStyle','margin_top_large']},
+                    {text: 'DATE OF INSPECTION: ' + vm.verticalStepper.step2.dateOfInspection.toLocaleDateString(), style: 'anotherStyle'},
                     {
                         text: 'WEATHER CONDITIONS AT TIME OF INSPECTION : ' + getSelectedConditions(vm.verticalStepper.step2.weatherCondition),
                         style: 'anotherStyle'
                     },
                     {
-                        text: 'OWNER OCCUPIED : ' + (vm.verticalStepper.step2.ownerOcuppied == undefined || vm.verticalStepper.step2.ownerOcuppied == false) ? 'No' : 'Yes',
+                        text: 'OWNER OCCUPIED : ' + ((vm.verticalStepper.step2.ownerOcuppied == undefined || vm.verticalStepper.step2.ownerOcuppied == false) ? 'No' : 'Yes'),
                         style: 'anotherStyle'
                     },
                     {
@@ -359,6 +398,12 @@
                         alignment: 'center',
                         margin: [20, 20]
                     },
+                    pageHeader: {
+                        fontSize: 20,
+                        bold: true,
+                        alignment: 'center',
+                        margin: [20, 20]
+                    },
                     anotherStyle: {
                         fontSize: 12,
                         italic: true,
@@ -382,6 +427,9 @@
                     },
                     margin_top:{
                         margin: [0, 20, 0, 0]
+                    },
+                    margin_top_large:{
+                        margin: [0, 100, 0, 0]
                     }
                 }
             };
@@ -391,7 +439,6 @@
             // }
             // else {
             console.log(docDefinition);
-            console.log(JSON.stringify(docDefinition));
             pdfMake.createPdf(docDefinition).open();
             //}
 
@@ -1113,13 +1160,19 @@
                 {
                     columns: [
                         {text: 'Secondary Roof Covering', style: 'p_header'},
-                        {text: (vm.verticalStepper.step9.secondaryRoof) ? beautifyArray(vm.verticalStepper.step9.secondaryRoofCovering) : 'N/A', style: "p"}
+                        {
+                            text: (vm.verticalStepper.step9.secondaryRoof) ? beautifyArray(vm.verticalStepper.step9.secondaryRoofCovering) : 'N/A',
+                            style: "p"
+                        }
                     ]
                 },
                 {
                     columns: [
                         {text: 'Secondary Roof Pitch', style: 'p_header'},
-                        {text: (vm.verticalStepper.step9.secondaryRoof) ? beautifyArray(vm.verticalStepper.step9.secondaryRoofPitch) : 'N/A', style: "p"}
+                        {
+                            text: (vm.verticalStepper.step9.secondaryRoof) ? beautifyArray(vm.verticalStepper.step9.secondaryRoofPitch) : 'N/A',
+                            style: "p"
+                        }
                     ]
                 }, {
 
@@ -1127,43 +1180,43 @@
                         {text: 'Attic Access', style: 'p_header'},
                         {text: beautifyArray(vm.verticalStepper.step9.atticAccess), style: "p"}
                     ]
-                },{
+                }, {
 
                     columns: [
                         {text: 'Attic Insulation/Ventilation', style: 'p_header'},
                         {text: beautifyArray(vm.verticalStepper.step9.atticInsulationVentilation), style: "p"}
                     ]
-                },{
+                }, {
 
                     columns: [
                         {text: 'Roof/Attic Structure', style: 'p_header'},
                         {text: beautifyArray(vm.verticalStepper.step9.roofStructure), style: "p"}
                     ]
-                },{
+                }, {
 
                     columns: [
                         {text: 'Woodwork', style: 'p_header'},
                         {text: beautifyArray(vm.verticalStepper.step9.woodWork), style: "p"}
                     ]
-                },{
+                }, {
 
                     columns: [
                         {text: 'Evidence of Leaks', style: 'p_header'},
                         {text: beautifyArray(vm.verticalStepper.step9.leaks), style: "p"}
                     ]
-                },{
+                }, {
 
                     columns: [
                         {text: 'Tiles', style: 'p_header'},
                         {text: beautifyArray(vm.verticalStepper.step9.brokenTiles), style: "p"}
                     ]
-                },{
+                }, {
 
                     columns: [
                         {text: 'Shingles/ Roll Roofing', style: 'p_header'},
                         {text: beautifyArray(vm.verticalStepper.step9.rollRoofing), style: "p"}
                     ]
-                },{
+                }, {
 
                     columns: [
                         {text: "Eve Edge/ Tie In's", style: 'p_header'},
@@ -1174,20 +1227,23 @@
                     text: "Age Projections", style: "h6_header"
                 },
                 {
-                    text:"Your roof’s approximate life expectancy is based on accepted industry standards.",
-                    style:'p'
+                    text: "Your roof’s approximate life expectancy is based on accepted industry standards.",
+                    style: 'p'
                 },
                 {
-                    text: "The structure was built in "+vm.verticalStepper.step1.yearsOld+ " That makes it "+(vm.currentYear-vm.verticalStepper.step1.yearsOld)+" years old.", style: "p"
+                    text: "The structure was built in " + vm.verticalStepper.step1.yearsOld + " That makes it " + (vm.currentYear - vm.verticalStepper.step1.yearsOld) + " years old.",
+                    style: "p"
                 },
                 {
-                    text: "Roof actual age is "+vm.verticalStepper.step9.mainRoofAge, style: "p"
+                    text: "Roof actual age is " + vm.verticalStepper.step9.mainRoofAge, style: "p"
                 },
                 {
-                    text: "Main roof has a remaining life expectancy of "+calculateRoofExpectansyLive(vm.verticalStepper.step9.mainRoofAge, vm.verticalStepper.step9.mainRoofCovering)+" years.", style: "p"
+                    text: "Main roof has a remaining life expectancy of " + calculateRoofExpectansyLive(vm.verticalStepper.step9.mainRoofAge, vm.verticalStepper.step9.mainRoofCovering) + " years.",
+                    style: "p"
                 },
                 {
-                    text: "Secondary roof has a remaining life expectancy of "+calculateRoofExpectansyLive(vm.verticalStepper.step9.secondaryRoofAge, vm.verticalStepper.step9.secondaryRoofCovering)+" years.", style: "p"
+                    text: (vm.verticalStepper.step9.secondaryRoof) ? ("Secondary roof has a remaining life expectancy of " + calculateRoofExpectansyLive(vm.verticalStepper.step9.secondaryRoofAge, vm.verticalStepper.step9.secondaryRoofCovering) + " years.") : "",
+                    style: "p"
                 },
                 deficiencies(vm.verticalStepper.step9.deficiencies)
             ]
@@ -1207,7 +1263,8 @@
                                     image: pictures[second],
                                     fit: [250, 250]
                                 } : {}
-                        ]
+                        ],
+                        margin: [10, 0]
                     });
                 }
                 return temp;
@@ -1234,7 +1291,7 @@
                     expectedLife = 15;
                 }
             });
-            return currentAge-expectedLife;
+            return expectedLife-currentAge;
         }
         function setDefaults(vm) {
             vm.verticalStepper.step8.poolWaterLevel='Normal';

@@ -10,7 +10,8 @@
     function config(uiGmapGoogleMapApiProvider, $translateProvider, $provide)
     {
         // Put your common app configurations here
-
+        //$window.Stripe.setPublishableKey('pk_test_uKrO7oGiMURGDqmHXnyd8adP');
+        Stripe.setPublishableKey('pk_test_uKrO7oGiMURGDqmHXnyd8adP');
         // uiGmapgoogle-maps configuration
         uiGmapGoogleMapApiProvider.configure({
             //    key: 'your api key',
